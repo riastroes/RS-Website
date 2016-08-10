@@ -1,0 +1,44 @@
+<<<<<<< Updated upstream
+
+Options Gif maker
+
+
+Name	       Default	Description
+repeat	         0	      repeat count, -1 = no repeat, 0 = forever
+quality	        10	      pixel sample interval, lower is better
+workers	        2	      number of web workers to spawn
+workerScript	gif.worker.js	url to load worker script from
+background	     #fff	   background color where source image is transparent
+width	          null	       output image width
+height	         null	   output image height
+transparent	    null	   transparent hex color, 0x00FF00 = green
+
+If width or height is null image size will be deteremined by first frame added.
+
+addFrame options
+
+Name	Default	   Description
+delay	500	       frame delay
+=======
+
+Options Gif maker
+
+
+Name	       Default	Description
+repeat	         0	      repeat count, -1 = no repeat, 0 = forever
+quality	        10	      pixel sample interval, lower is better
+workers	        2	      number of web workers to spawn
+workerScript	gif.worker.js	url to load worker script from
+background	     #fff	   background color where source image is transparent
+width	          null	       output image width
+height	         null	   output image height
+transparent	    null	   transparent hex color, 0x00FF00 = green
+
+If width or height is null image size will be deteremined by first frame added.
+
+addFrame options
+
+Name	Default	   Description
+delay	500	       frame delay
+>>>>>>> Stashed changes
+copy	false	   copy the pixel data
