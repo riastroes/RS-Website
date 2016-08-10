@@ -1,10 +1,11 @@
-function TextBubble(nr){
+function TextBubble(min,  max){
   this.x = width/2;
   this.y = height/2;
   this.style(0);
-  this.textnr = nr;
-  this.minnr = 0;
-  this.maxnr = 3;
+
+  this.textnr = min-1;
+  this.minnr = min;
+  this.maxnr = max;
   this.max = 99;
 
 }
@@ -25,21 +26,24 @@ TextBubble.prototype.style = function(nr){
   }
   app.style.set(this.strokecolor, this.fillcolor, this.thickness);
 }
-TextBubble.prototype.draw = function(x,y,minnr, maxnr){
+TextBubble.prototype.draw = function(x,y){
   this.x = x;
   this.y = y;
-  this.minnr = minnr;
-  this.maxnr = maxnr;
+
   this.style(0);
   ellipse(this.x,this.y - 125, 250,250);
   textSize(16);
   textAlign(CENTER);
   this.style(1);
-  text(this.getText(this.textnr), this.x,this.y - 125);
+  text(this.getText(), this.x,this.y - 125);
 
 }
-TextBubble.prototype.getText = function(nr){
-  switch(nr){
+TextBubble.prototype.getText = function(){
+  if(this.textnr > this.maxnr){
+    this.textnr = this.minnr;
+  }
+
+  switch(this.textnr){
     case 1:
     this.text = "Hello, \nIf you want to find out more.\nJust click on the screen!"
     break;
@@ -48,10 +52,20 @@ TextBubble.prototype.getText = function(nr){
     this.text += "\nThis means code is my pencil.";
     this.text += "\nCode is my paint.";
     break;
+    case 3:
+    this.text = "Press ENTER";
+    this.text += "\n and I will show my last project.";
+    break;
+    case 4:
+    this.text = "This is the big crack!";
+    break;
+    case 5:
+    this.text = "Don't fall in!";
+    break;
     default:
     this.text = "Sorry, there is no more info.";
     this.textnr = max;
   }
-  this.textnr++;
+
   return this.text;
 }

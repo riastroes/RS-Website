@@ -9,26 +9,12 @@ function setup() {
     //second parameter, string with sounds comma-separated
     app.loadResources("signature.png,palette_landscape.png");
 }
-function keyPressed(){
-  if(app.is(app.project)){
-
-    if(keyCode == ENTER){
-      app.nextscene();
-    }
-  }
-  return false;
-}
 function mousePressed(){
 
   if(mouseButton == LEFT){
     if(app.is(app.project)){
-
-      if(app.project.bubble.textnr <= app.project.bubble.max){
-        app.project.info = true;
-      }
-      else{
-        app.project.info = false;
-      }
+      app.project.info = true;
+      app.project.bubble.textnr++;
     }
   }
   return false;
@@ -71,7 +57,17 @@ function draw() {
               }
             case 3:{
                app.project.run(3);
-               app.runscene(500);
+               app.runscene(0);
+               break;
+              }
+            case 4:{
+               app.project.run(4);
+               app.runscene(300);
+               break;
+              }
+            case 5:{
+               app.project.run(5);
+               app.runscene(0);
                break;
               }
             default:{

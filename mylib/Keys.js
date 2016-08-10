@@ -72,4 +72,12 @@ function keyPressed() {
     }
 
 
+    if(keyCode == ENTER){
+      if(app.is(app.project)){
+        app.nextscene();
+      }
+    }
+    return false;
+
+
 }

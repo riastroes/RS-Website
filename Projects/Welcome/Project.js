@@ -8,10 +8,8 @@ function Project(){
   this.bg =app.pal.randomImgColor();
   this.bubbles =[];
   this.density = pixelDensity();
-  this.bubble = new TextBubble();
   this.info = false;
-  this.textminnr = 0;
-  this.textmaxnr = 3;
+  this.cracks = [];
 
 };
 
@@ -57,6 +55,7 @@ Project.prototype.style = function(nr){
 Project.prototype.run = function(nr){
   switch(nr){
     case 0:
+    this.bubble = new TextBubble(1,3);
     background(this.bg);
     this.showTitle();
     this.showSubTitle();
@@ -70,7 +69,18 @@ Project.prototype.run = function(nr){
     break;
     case 3:
     background(this.bg);
-    this.crackScreen(mouseX, mouseY);
+    this.info = false;
+    this.bubble = new TextBubble(4,5);
+    this.createCracks(4);
+    break;
+    case 4:
+    background(this.bg);
+    this.crackScreen();
+    break;
+    case 5:
+    this.bg = get(10, 10);
+    background(this.bg);
+    
     break;
   }
   if(this.info){
@@ -79,8 +89,7 @@ Project.prototype.run = function(nr){
   this.showInfoBar();
 }
 Project.prototype.showInfo = function(){
-
-  this.bubble.draw(mouseX,mouseY,this.textminnr, this.textmaxnr);
+  this.bubble.draw(mouseX,mouseY);
 }
 Project.prototype.showInfoBar = function(){
   this.style(4);
@@ -88,7 +97,7 @@ Project.prototype.showInfoBar = function(){
   this.style(2);
   textAlign(CENTER);
   textSize(14);
-  text("CLICK = show info about a project, ENTER = show next project", 20,height -10);
+  text("CLICK = show info about a project, ENTER = show next project", width/2,height -10);
 
 }
 Project.prototype.showTitle = function(){
@@ -122,6 +131,21 @@ Project.prototype.showBubbles = function(){
     this.bubbles[i].draw();
   }
 }
-Project.prototype.crackScreen = function(x,y){
-  rect(100,100,100,100);
+Project.prototype.createCracks = function(){
+  var dir = createVector(-10,0);
+  append(this.cracks, new Crack(mouseX, mouseY, dir));
+  dir = createVector(10,0);
+  append(this.cracks, new Crack(mouseX, mouseY, dir));
+  dir = createVector(0,-10);
+  append(this.cracks, new Crack(mouseX, mouseY, dir));
+  dir = createVector(0,10);
+  append(this.cracks, new Crack(mouseX, mouseY, dir));
+
+
+}
+Project.prototype.crackScreen = function(){
+  for(var i = 0 ; i < this.cracks.length; i++){
+    this.cracks[i].go();
+    this.cracks[i].draw();
+  }
 }

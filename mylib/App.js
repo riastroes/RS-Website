@@ -269,7 +269,8 @@ App.prototype.runscene = function(framecounts){
 App.prototype.nextscene = function(){
 
       this.scene++;
-    
+      this.isrunning = false;
+
 };
 App.prototype.wait = function(framecounts, nextscene){
     if(framecounts > 0) {
