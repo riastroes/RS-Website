@@ -66,12 +66,12 @@ function draw() {
                break;
               }
             case 6:{
-               app.project.run(6);
+               app.project.run(5);
                app.runscene(0);
                break;
               }
             case 7:{
-               app.project.run(5);
+               app.project.run(6);
                app.runscene(500);
                break;
               }

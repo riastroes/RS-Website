@@ -55,12 +55,14 @@ Project.prototype.style = function(nr){
 Project.prototype.run = function(nr){
   switch(nr){
     case 0:
+    //show title
     this.bubble = new TextBubble(1,3);
     background(this.bg);
     this.showTitle();
     this.showSubTitle();
     break;
     case 1:
+    //start bubbling
     this.collectWhite();
     break;
     case 2:
@@ -68,6 +70,7 @@ Project.prototype.run = function(nr){
     this.showBubbles();
     break;
     case 3:
+    // create cracks
     background(this.bg);
     this.info = false;
     this.bubble = new TextBubble(4,5);
@@ -78,6 +81,7 @@ Project.prototype.run = function(nr){
     this.crackScreen();
     break;
     case 5:
+    //one background color
     this.bg = get(10, 10);
     background(this.bg);
     break;
