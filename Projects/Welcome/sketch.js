@@ -28,7 +28,12 @@ function draw() {
       }
       if(app.isnot(app.project)){
         app.project = new Project();
-        app.scene = -1;
+        if(app.is(app.params.scene)){
+          app.scene = parseInt(app.params.scene);
+        }
+        else{
+          app.scene = 0;
+        }
       }
       else{
         switch(app.scene) {
@@ -65,16 +70,26 @@ function draw() {
                app.runscene(300);
                break;
               }
-            case 6:{
+            case 5:{
                app.project.run(5);
                app.runscene(0);
                break;
               }
-            case 7:{
+            case 6:{
                app.project.run(6);
-               app.runscene(500);
+               app.runscene(0);
                break;
               }
+            case 7:{
+               app.project.run(7);
+               app.runscene(300);
+               break;
+              }
+          case 8:{
+             app.project.run(8);
+             app.runscene(0);
+             break;
+            }
             default:{
                 //wait
                 app.wait();

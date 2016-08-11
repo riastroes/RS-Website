@@ -54,6 +54,7 @@ function App(name, appwidth, appheight,  canvastype){
     this.isrunning = false;
     this.runcount =0;
     this.scene = 0;
+    this.params = getURLParams();
 
     //styles and colors
     this.pal = new Palette(0);

@@ -3,12 +3,14 @@
  */
  "use strict";
 function Project(){
+
   this.text1 = "Ria Stroes";
   this.text2 = "creative coder";
   this.bg =app.pal.randomImgColor();
   this.bubbles =[];
   this.density = pixelDensity();
   this.info = false;
+  this.infobar = 1;
   this.cracks = [];
 
 };
@@ -57,6 +59,7 @@ Project.prototype.run = function(nr){
     case 0:
     //show title
     this.bubble = new TextBubble(1,3);
+    this.infobar = 0;
     background(this.bg);
     this.showTitle();
     this.showSubTitle();
@@ -82,15 +85,21 @@ Project.prototype.run = function(nr){
     break;
     case 5:
     //one background color
-    this.bg = get(10, 10);
+    //this.bg = get(10, 10);
     background(this.bg);
+    this.infobar = 1;
+    this.createGallery();
     break;
     case 6:
-    this.createShow();
+    //create show
+    this.gallery.createShow();
     break;
     case 7:
     //show projects
     this.showProjects();
+    break;
+    case 8:
+    this.gallery.showProject(0);
     break;
   }
   if(this.info){
@@ -107,7 +116,15 @@ Project.prototype.showInfoBar = function(){
   this.style(2);
   textAlign(CENTER);
   textSize(14);
-  text("CLICK = show info about a project, ENTER = show next project", width/2,height -10);
+  switch(this.infobar){
+    case 0:
+    text("CLICK = show info about a project, ENTER = show next project", width/2,height -10);
+    break;
+    case 1:
+    text("CLICK on a image = show a project", width/2,height -10);
+    break;
+  }
+
 
 }
 Project.prototype.showTitle = function(){
@@ -159,13 +176,14 @@ Project.prototype.crackScreen = function(){
     this.cracks[i].draw();
   }
 }
-Project.prototype.createShow = function(){
-  this.show = new Show();
+Project.prototype.createGallery = function(){
+  this.gallery = new Gallery();
 }
 Project.prototype.showProjects = function(){
+  this.style(0);
 
-  for(var i = 0; i < this.show.length; i++){
-
+  for(var i = 0; i < this.gallery.thumbnails.length; i++){
+    image(this.gallery.thumbnails[i], random(width), random(height));
   }
 
 }
