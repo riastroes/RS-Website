@@ -80,7 +80,13 @@ Project.prototype.run = function(nr){
     case 5:
     this.bg = get(10, 10);
     background(this.bg);
-    
+    break;
+    case 6:
+    this.createShow();
+    break;
+    case 7:
+    //show projects
+    this.showProjects();
     break;
   }
   if(this.info){
@@ -148,4 +154,14 @@ Project.prototype.crackScreen = function(){
     this.cracks[i].go();
     this.cracks[i].draw();
   }
+}
+Project.prototype.createShow = function(){
+  this.show = new Show();
+}
+Project.prototype.showProjects = function(){
+
+  for(var i = 0; i < this.show.length; i++){
+
+  }
+
 }
