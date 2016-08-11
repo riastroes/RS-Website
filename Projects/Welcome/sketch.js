@@ -82,9 +82,10 @@ function draw() {
               }
             case 7:{
                app.project.run(7);
-               app.runscene(300);
+               app.wait(500);
                break;
               }
+
           case 8:{
              app.project.run(8);
              app.runscene(0);

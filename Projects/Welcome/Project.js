@@ -183,7 +183,8 @@ Project.prototype.showProjects = function(){
   this.style(0);
 
   for(var i = 0; i < this.gallery.thumbnails.length; i++){
-    image(this.gallery.thumbnails[i], random(width), random(height));
+    //image(this.gallery.thumbnails[i], random(width), random(height));
+    this.gallery.createPresentation(i);
   }
 
 }
