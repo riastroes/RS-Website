@@ -3,15 +3,18 @@
  */
  "use strict";
 function Project(){
-
+  this.name ="Welcome";
   this.text1 = "Ria Stroes";
   this.text2 = "creative coder";
   this.bg =app.pal.randomImgColor();
   this.bubbles =[];
   this.density = pixelDensity();
+  this.hasinfo = false;
   this.info = false;
   this.infobar = 1;
   this.cracks = [];
+  this.gallery = new Gallery();
+  this.choosenproject = -1;
 
 };
 
@@ -60,6 +63,7 @@ Project.prototype.run = function(nr){
     //show title
     this.bubble = new TextBubble(1,3);
     this.infobar = 0;
+    this.hasinfo = true;
     background(this.bg);
     this.showTitle();
     this.showSubTitle();
@@ -75,7 +79,7 @@ Project.prototype.run = function(nr){
     case 3:
     // create cracks
     background(this.bg);
-    this.info = false;
+
     this.bubble = new TextBubble(4,5);
     this.createCracks(4);
     break;
@@ -84,31 +88,39 @@ Project.prototype.run = function(nr){
     this.crackScreen();
     break;
     case 5:
-    //one background color
-    //this.bg = get(10, 10);
     background(this.bg);
-    this.infobar = 1;
-    this.createGallery();
+    this.gallery.createPresentation();
     break;
     case 6:
-    //create show
-    this.gallery.createShow();
+    //run presentation
+    this.hasinfo = false;
+    this.infobar = 1;
+    background(this.bg);
+    this.choosenproject = this.gallery.runPresentation();
+    if(this.choosenproject >= 0){
+      background(this.bg);
+      app.nextscene();
+    }
     break;
     case 7:
-    //show projects
-    this.showProjects();
+    if(this.choosenproject >0){
+      this.gallery.gotoProject(this.choosenproject);
+    }
+    else{
+      this.gallery.gotoProject(0);
+    }
     break;
-    case 8:
-    this.gallery.showProject(0);
-    break;
+
   }
-  if(this.info){
+  if(this.info && this.hasinfo){
     this.showInfo();
   }
   this.showInfoBar();
 }
 Project.prototype.showInfo = function(){
-  this.bubble.draw(mouseX,mouseY);
+
+    this.bubble.draw(mouseX,mouseY);
+
 }
 Project.prototype.showInfoBar = function(){
   this.style(4);
@@ -124,21 +136,19 @@ Project.prototype.showInfoBar = function(){
     text("CLICK on a image = show a project", width/2,height -10);
     break;
   }
-
-
 }
 Project.prototype.showTitle = function(){
   this.style(1);
-  textSize(200);
+  textSize(250);
   textAlign(CENTER);
-  text(this.text1,width/2,height/2);
+  text(this.text1,width/2,height/3);
 }
 
 Project.prototype.showSubTitle = function(){
   this.style(1);
   textSize(100);
   textAlign(CENTER);
-  text(this.text2,width/2,(height/2) + 100);
+  text(this.text2,width/2,(height/3) + 100);
 }
 Project.prototype.collectWhite = function(){
   loadPixels();
@@ -148,7 +158,7 @@ Project.prototype.collectWhite = function(){
       var x = p % width;
       var y = p / width;
 
-      append(this.bubbles, new Bubble(x,y, 10));
+      append(this.bubbles, new Bubble(x,y, 20));
     }
   }
 }
@@ -168,23 +178,10 @@ Project.prototype.createCracks = function(){
   dir = createVector(0,10);
   append(this.cracks, new Crack(mouseX, mouseY, dir));
 
-
 }
 Project.prototype.crackScreen = function(){
   for(var i = 0 ; i < this.cracks.length; i++){
     this.cracks[i].go();
     this.cracks[i].draw();
   }
-}
-Project.prototype.createGallery = function(){
-  this.gallery = new Gallery();
-}
-Project.prototype.showProjects = function(){
-  this.style(0);
-
-  for(var i = 0; i < this.gallery.thumbnails.length; i++){
-    //image(this.gallery.thumbnails[i], random(width), random(height));
-    this.gallery.createPresentation(i);
-  }
-
 }

@@ -70,13 +70,29 @@ function keyPressed() {
         save(app.name + app.savedimages + ".jpg");
         app.savedimages++;
     }
-
-
     if(keyCode == ENTER){
       if(app.is(app.project)){
-        app.nextscene();
+        if(app.project.name == "Welcome"){
+          window.location.assign("index.html?scene=5");
+        }
+        else{
+          window.location.assign("../Welcome/index.html?scene=5");
+        }
       }
     }
+    if(keyCode == 32){ //SPACEBAR
+      var info = document.getElementById("info");
+      if(app.is(info)){
+        if(info.style.visibility == "visible"){
+          info.style.visibility = "hidden";
+        }
+        else{
+          info.style.visibility = "visible";
+        }
+      }
+
+    }
+
     return false;
 
 

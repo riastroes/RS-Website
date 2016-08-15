@@ -13,8 +13,10 @@ function mousePressed(){
 
   if(mouseButton == LEFT){
     if(app.is(app.project)){
-      app.project.info = true;
-      app.project.bubble.textnr++;
+      if(app.project.hasinfo){
+        app.project.info = true;
+        app.project.bubble.textnr++;
+      }
     }
   }
   return false;
@@ -57,7 +59,7 @@ function draw() {
               }
             case 2:{
                app.project.run(2);
-               app.runscene(500);
+               app.runscene(300);
                break;
               }
             case 3:{
@@ -77,20 +79,15 @@ function draw() {
               }
             case 6:{
                app.project.run(6);
-               app.runscene(0);
+               app.runscene(5000);
                break;
               }
             case 7:{
                app.project.run(7);
-               app.wait(500);
+               app.runscene(0);
                break;
               }
 
-          case 8:{
-             app.project.run(8);
-             app.runscene(0);
-             break;
-            }
             default:{
                 //wait
                 app.wait();

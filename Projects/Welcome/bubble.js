@@ -16,7 +16,7 @@ Bubble.prototype.style = function(nr){
   app.style.set(this.strokecolor, this.fillcolor, this.thickness);
 }
 Bubble.prototype.move = function(){
-  this.x += random(-1,1);
+  this.x += random(-2,2);
 
   if(random(10) < 1){
     this.y += 10;

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Tulips</title>
+    <script type= "text/javascript">
+    function goBack(){
+      window.location.assign("../Welcome/index.html?scene=5");
+    }
+    </script>
+    <style>
+    <style>
+    body{
+      font-family:"arial";
+      font-size:18px;
+      background-color: #93aeb4;
+      color: white;
+      margin:0px;
+      align:center;
+
+    }
+    td{
+      vertical-align: top;
+    }
+
+    #content{
+      margin: auto;
+      width: 50%;
+      padding:40px;
+
+    }
+    #infobar{
+      position:fixed;
+      bottom:0;
+      width:100%;
+      heigth:30px;
+      text-align: center;
+      border : solid 1px white;
+      background-color: white;
+      color:black;
+
+    }
+    </style>
+
+  </head>
+  <body  onkeypress="goBack()">
+    <div id="content">
+
+    <h1>3 Tulips</h1>
+    <div><img src="result/3tulips.jpg" alt="Tulips" height="600px"  />
+    </div>
+  </div>
+  <div id="infobar" > ENTER go back to the gallery</div>
+  </body>
+</html>

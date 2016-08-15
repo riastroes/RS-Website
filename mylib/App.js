@@ -269,8 +269,7 @@ App.prototype.runscene = function(framecounts){
 };
 App.prototype.nextscene = function(){
 
-      this.scene++;
-      this.isrunning = false;
+      this.runcount = 1;
 
 };
 App.prototype.wait = function(framecounts, nextscene){
@@ -305,6 +304,7 @@ App.prototype.counter = function(start, stop){
     }
     return this.c;
 };
+
 
 //VECTOR FUNCTIONS
 
