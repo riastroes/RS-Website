@@ -18,6 +18,7 @@
       background-color: rgb(171, 217, 230);
       margin:0px;
     }
+    h1{align:center}
     td{
       vertical-align:top;
       padding-top:30px;
@@ -25,23 +26,22 @@
       padding-right:30px;
     }
     #content{
-      position:absolute;
-      height:windowHeight-30;
+
+      width:50%;
+      margin:auto;
 
     }
-    #infobar{
-      position:fixed;
-      bottom:0;
-      width:100%;
-      heigth:30px;
-      text-align: center;
-      border : solid 1px white;
-      background-color: rgb(255, 255, 255);
+    #enter{
+      position:absolute;
+      left:10px;
+      top:10px;
+      z-index:99;
     }
     </style>
 
   </head>
   <body  onkeypress="goBack()">
+    <img id="enter" src="resources/enter.png" />
     <img src="resources/lucas.png" align="right" style="position:absolute; right:0px; bottom:30px; z-index:99"/>
 
     <div id="content">
@@ -88,6 +88,5 @@ started on 15 july at Nijemirdum, Netherlands<br>
 - 18 july in Sneek, Meeuwenlaan 8, Netherlands<br>
 -</td></tr></table>
 </div>
-  <div id="infobar" > ENTER go back to the gallery</div>
   </body>
 </html>

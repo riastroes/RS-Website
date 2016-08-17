@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
 
-    <title>Paintingmachines</title>
+    <title>Info Paintingmachines</title>
     <script type= "text/javascript">
     function goBack(){
       window.location.assign("../Welcome/index.html?scene=5");
@@ -30,22 +30,18 @@
       padding:40px;
       text-align: center;
     }
-    #infobar{
-      position:fixed;
-      bottom:0;
-      width:100%;
-      heigth:30px;
-      text-align: center;
-      border : solid 1px white;
-      background-color: white;
-      color:black;
 
+    #enter{
+      position:absolute;
+      right:10px;
+      top:10px;
+      z-index:99;
     }
-
     </style>
 
   </head>
   <body  onkeypress="goBack()">
+    <img id="enter" src="resources/enter.png" />
     <div id="content">
 
     <h1>Paintingmachines</h1>
@@ -73,6 +69,5 @@
     </p>
 
   </div>
-  <div id="infobar" > ENTER = go back to the gallery</div>
   </body>
 </html>
