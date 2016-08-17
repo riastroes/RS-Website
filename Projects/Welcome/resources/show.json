@@ -2,7 +2,7 @@
   "0": {
 
     "project": "Knitting",
-    "page": "/index.html",
+    "page": "/knitting.html",
     "info": "The amazing path of one thread.",
     "status": "underconstruction",
     "date": "11-8-2016",
@@ -12,7 +12,7 @@
   "1": {
 
     "project": "Dancing Lines",
-    "page": "/index.html",
+    "page": "/dancing lines.html",
     "status": "ready",
     "date": "11-8-2016",
     "thumbnail": "tndancinglines.jpg"
@@ -37,7 +37,7 @@
   "4": {
     "id": 1,
     "project": "Tulips",
-    "page": "/index.html",
+    "page": "/3tulips.html",
     "status": "ready",
     "date": "11-8-2016",
     "thumbnail": "tntulip.jpg"
@@ -68,8 +68,8 @@
   },
   "8": {
     "id": 1,
-    "project": "Painting Machines",
-    "page": "/index.html",
+    "project": "Paintingmachines",
+    "page": "/paintingmachines.html",
     "status": "ready",
     "date": "11-8-2016",
     "thumbnail": "tnpaintingmachines.jpg"

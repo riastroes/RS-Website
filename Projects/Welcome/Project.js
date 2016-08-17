@@ -5,7 +5,7 @@
 function Project(){
   this.name ="Welcome";
   this.text1 = "Ria Stroes";
-  this.text2 = "creative coder";
+  this.text2 = "creative coder, artist";
   this.bg =app.pal.randomImgColor();
   this.bubbles =[];
   this.density = pixelDensity();

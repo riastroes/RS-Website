@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Paintingmachines</title>
+    <script type= "text/javascript">
+    function goBack(){
+      window.location.assign("../Welcome/index.html?scene=5");
+    }
+    </script>
+    <style>
+    body{
+      font-family:"Arial";
+      font-size:18px;
+      background-color: #93aeb4;
+      color: white;
+      margin:0px;
+
+    }
+
+    p,ul{
+      margin:auto;
+      width:50%;
+      text-align:left;
+      align:center;
+    }
+    #content{
+
+      padding:40px;
+      text-align: center;
+    }
+    #infobar{
+      position:fixed;
+      bottom:0;
+      width:100%;
+      heigth:30px;
+      text-align: center;
+      border : solid 1px white;
+      background-color: white;
+      color:black;
+
+    }
+
+    </style>
+
+  </head>
+  <body  onkeypress="goBack()">
+    <div id="content">
+
+    <h1>Paintingmachines</h1>
+    <img src="resources/paintingmachines.jpg" alt="Paintingmachines" align="center" width="50%"/>
+    <br/><br/><br/>
+    <p>Paintingmachines is an interactive app created in Processing. You can create digital paintings with 10 different machines.<br/>
+      Every machine has is own way of painting depending on his structure and the way he moves.<br/>
+      When a machine has done his job, a trail will start that will follow the painted forms.
+      You can stop this trailing by clicking the <strong>SPACEBAR</strong>.
+      With a click on the screen you can come back to the paintingmachine selection page.
+      Select your favourite machine and start painting.
+      When your painting is ready, you can save it by clicking the <strong>S button</strong>.<br/>
+      The painting will download and you can print it on some nice photo-paper for a nice result.
+      <br/><br/>
+      Have fun painting!!
+    </p>
+
+      <h3>DOWNLOAD THE APP</h3>
+      <p>
+      <ul>
+    <li>  <a href="apps/paintingmachines16win32.zip" download>Paintingmachines16 (WINDOWS 32bits)</a></il>
+    <li>  <a href="apps/paintingmachines16win64.zip" download>Paintingmachines16 (WINDOWS 64bits)</a></il>
+    <li>  <a href="apps/paintingmachines16mac.zip" download>Paintingmachines16 (MAC)</a></il>
+    </ul>
+    </p>
+
+  </div>
+  <div id="infobar" > ENTER = go back to the gallery</div>
+  </body>
+</html>

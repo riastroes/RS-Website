@@ -111,30 +111,37 @@ function draw() {
                //
               background(255);
                 app.project.draw(10);
-                app.wait(200);
+                app.wait(100);
                 break;
               }
             case 12:{
                //
                //background(app.pal.colors[1]);
                 app.project.draw(11);
-                app.wait(200);
+                app.wait(100);
                 break;
               }
               case 13:{
                  //
                  //background(app.pal.colors[1]);
                   app.project.draw(12);
-                  app.wait(200);
+                  app.wait(100);
                   break;
                 }
             case 14:{
                //
                //background(app.pal.colors[1]);
                 app.project.draw(13);
-                app.wait(200);
+                app.wait(100);
                 break;
               }
+              case 15:{
+                //start over
+                     app.wait(1,0);
+                     break;
+
+                    }
+
             default:{
                 //wait
                 app.wait();
