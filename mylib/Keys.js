@@ -97,3 +97,28 @@ function keyPressed() {
 
 
 }
+function mousePressed() {
+  if(mouseButton == LEFT){
+    if(app.is(app.project)){
+      if(app.project.name == "Welcome"){
+        window.location.assign("index.html?scene=5");
+      }
+      else{
+        window.location.assign("../Welcome/index.html?scene=5");
+      }
+    }
+  }
+  if(mouseButton == RIGHT){
+    var info = document.getElementById("info");
+    if(app.is(info)){
+      if(info.style.visibility == "visible"){
+        info.style.visibility = "hidden";
+      }
+      else{
+        info.style.visibility = "visible";
+      }
+    }
+  }
+
+  return false;
+}

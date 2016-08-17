@@ -8,6 +8,7 @@ function Gallery(){
   this.pages = [];
   this.pos = [];
   this.frames = [];
+  this.loaded = 0;
 
 
 }
@@ -27,36 +28,51 @@ Gallery.prototype.callBackGallery = function(){
   app.project.gallery.createShow();
 }
 Gallery.prototype.createShow = function(){
+  this.thumbnails = [];
+  this.projects = [];
+  this.pages = [];
   for(var i = 0; i < this.gallery.length; i++){
-    append(this.thumbnails , loadImage(this.path + this.gallery[i].thumbnail));
-    append(this.projects , this.gallery[i].project);
+    this.thumbnails[i] = loadImage(this.path + this.gallery[i].thumbnail, this.callBackImage);
+    this.projects[i] = this.gallery[i].project;
     if(app.isnot(this.gallery[i].page)){
-      this.gallery[i].page = "/index.html";
+      this.pages[i] = "/index.html";
     }
-    append(this.pages , this.gallery[i].page);
-    console.log(this.gallery[i].thumbnail);
+    else{
+      this.pages[i] = this.gallery[i].page;
+    }
+
+
   }
+  this.loadingtime = 0;
+  setTimeout(app.project.gallery.createPresentation, 1000);
+}
+Gallery.prototype.callBackImage = function(){
+  app.project.gallery.loaded++;
 }
 
 Gallery.prototype.createPresentation = function(){
- var loaded = 0;
- var attemped = 0;
+   var gal = app.project.gallery;
+   var loaded = 0;
+   var attemped = 0;
 
- while(loaded < this.thumbnails.length  && attemped < 100){
-   for(var i = 0; i < this.thumbnails.length; i++){
-     if((app.is(this.thumbnails[i]) && this.thumbnails[i].width >1) && app.isnot(this.frames[i])){
-       loaded++;
-       this.frames[i] = new Frame(this.thumbnails[i],i);
+   while(loaded < gal.thumbnails.length  && attemped < 100){
+     for(var i = 0; i < gal.thumbnails.length; i++){
+       if((app.is(gal.thumbnails[i]) && gal.thumbnails[i].width >1) && app.isnot(gal.frames[i])){
+         loaded++;
+         gal.frames[i] = new Frame(gal.thumbnails[i],i);
+       }
+
      }
-   }
-   attemped++;
-   console.log(attemped);
+     attemped++;
+     console.log(attemped);
 
- }
- if(attemped == 100){
-   //ERROR:  THIS IS WRONG, BUT I DON'T HAVE AN OTHER SOLLUTION
-   location.reload();
- }
+   }
+   if(attemped == 100){
+     //ERROR:  THIS IS WRONG, BUT I DON'T HAVE AN OTHER SOLLUTION
+     //this.createShow();
+     console.log(gal.frames);
+   }
+
 
 }
 Gallery.prototype.runPresentation = function(){
@@ -73,5 +89,10 @@ Gallery.prototype.runPresentation = function(){
   return choosenproject;
 }
 Gallery.prototype.gotoProject = function(i){
-  window.location.assign(this.projectpath + this.projects[i] + this.pages[i]);
+  if(this.gallery[i].page.startsWith("http://")){
+    window.location.assign(this.pages[i]);
+  }
+  else{
+    window.location.assign(this.projectpath + this.projects[i] + this.pages[i]);
+  }
 }

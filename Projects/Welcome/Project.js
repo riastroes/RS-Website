@@ -89,7 +89,7 @@ Project.prototype.run = function(nr){
     break;
     case 5:
     background(this.bg);
-    this.gallery.createPresentation();
+  //  this.gallery.createPresentation();
     break;
     case 6:
     //run presentation
@@ -139,26 +139,28 @@ Project.prototype.showInfoBar = function(){
 }
 Project.prototype.showTitle = function(){
   this.style(1);
-  textSize(250);
+  textSize(200);
   textAlign(CENTER);
   text(this.text1,width/2,height/3);
 }
 
 Project.prototype.showSubTitle = function(){
   this.style(1);
-  textSize(100);
+  textSize(80);
   textAlign(CENTER);
   text(this.text2,width/2,(height/3) + 100);
 }
 Project.prototype.collectWhite = function(){
   loadPixels();
-  for(var i = 0; i < pixels.length; i += 60){
+  var steps = parseInt((width/2000) * 60);
+
+  for(var i = 0; i < pixels.length; i += steps){
     if((pixels[i] == 255) && (pixels[i+1] == 255) && (pixels[i+2] == 255)){
       var p = (i / (4 * this.density));
       var x = p % width;
       var y = p / width;
 
-      append(this.bubbles, new Bubble(x,y, 20));
+      append(this.bubbles, new Bubble(x,y, 10));
     }
   }
 }
@@ -169,14 +171,20 @@ Project.prototype.showBubbles = function(){
   }
 }
 Project.prototype.createCracks = function(){
+  var x = mouseX;
+  var y = mouseY;
+  if(x == 0 && y == 0){
+    x = width/2;
+    y = height/2;
+  }
   var dir = createVector(-10,0);
-  append(this.cracks, new Crack(mouseX, mouseY, dir));
+  append(this.cracks, new Crack(x,y, dir));
   dir = createVector(10,0);
-  append(this.cracks, new Crack(mouseX, mouseY, dir));
+  append(this.cracks, new Crack(x,y,  dir));
   dir = createVector(0,-10);
-  append(this.cracks, new Crack(mouseX, mouseY, dir));
+  append(this.cracks, new Crack(x,y,  dir));
   dir = createVector(0,10);
-  append(this.cracks, new Crack(mouseX, mouseY, dir));
+  append(this.cracks, new Crack(x,y,  dir));
 
 }
 Project.prototype.crackScreen = function(){

@@ -1,5 +1,6 @@
 {
   "0": {
+
     "project": "Knitting",
     "page": "/index.html",
     "info": "The amazing path of one thread.",
@@ -9,6 +10,7 @@
 
   },
   "1": {
+
     "project": "Dancing Lines",
     "page": "/index.html",
     "status": "ready",
@@ -17,6 +19,7 @@
 
   },
   "2": {
+
     "project": "Contact",
     "page": "/contact.html",
     "status": "ready",
@@ -30,26 +33,22 @@
     "status": "ready",
     "date": "11-8-2016",
     "thumbnail": "tnlucas.jpg"
-
-
   },
   "4": {
+    "id": 1,
     "project": "Tulips",
     "page": "/index.html",
     "status": "ready",
     "date": "11-8-2016",
     "thumbnail": "tntulip.jpg"
-
-
   },
   "5": {
+    "id": 1,
     "project": "Creative Coding",
     "page": "/creative coding.html",
     "status": "ready",
     "date": "11-8-2016",
     "thumbnail": "tncreativecoding.jpg"
-
-
   },
   "6": {
     "project": "Dancing Lines",
@@ -57,10 +56,9 @@
     "status": "ready",
     "date": "11-8-2016",
     "thumbnail": "tnstockings.jpg"
-
-
   },
   "7": {
+    "id": 1,
     "project": "Making a Difference",
     "page": "http://www.riastroes.nl/2016/projects/Machines/index.html",
     "status": "ready",
@@ -69,12 +67,11 @@
 
   },
   "8": {
+    "id": 1,
     "project": "Painting Machines",
     "page": "/index.html",
     "status": "ready",
     "date": "11-8-2016",
     "thumbnail": "tnpaintingmachines.jpg"
-
-
   }
 }

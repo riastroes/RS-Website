@@ -47,7 +47,7 @@ function draw() {
                app.runscene(500);
                break;
                 }
-            case 2:{
+          case 2:{
               //  //colored lines, one group
               //  app.bg(5);
               //  app.project.draw(2);
@@ -135,8 +135,9 @@ function draw() {
                     background(0);
                   }
 
-                  app.project.draw(11);
-                  app.runscene(300);
+                  //app.project.draw(11);
+                  //app.runscene(300);
+                  app.runscene(0);
                   break;
             }
            case 14:{

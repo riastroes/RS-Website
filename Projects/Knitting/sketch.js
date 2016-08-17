@@ -4,7 +4,7 @@ var app;
 
 function setup() {
 
-    app = new App("Knitting",590,630, SVG);
+    app = new App("Knitting",windowWidth, windowHeight, SVG);
     //first parameter, string with images comma-separated
     //second parameter, string with sounds comma-separated
     app.loadResources("coolcolors.jpg");
