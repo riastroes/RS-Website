@@ -49,7 +49,7 @@ function draw() {
             }
             case 0:{
                app.project.run(0);
-               app.runscene(50);
+               app.runscene(100);
                break;
               }
             case 1:{

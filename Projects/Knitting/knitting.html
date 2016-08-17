@@ -31,34 +31,26 @@
     <script src="Knitting.js" type="text/javascript"></script>
 
     <style>
-    #info{
-      background-color: #fa5bd4;
 
-      color:white;
-      position:fixed;
-      height:100%;
-      visibility:hidden;
-      padding:40px;
+    #info{
+      position:absolute;
+      right:10px;
+      top:10px;
+      z-index:99;
     }
-    #infobar{
-      position:fixed;
-      bottom:0;
-      width:100%;
-      heigth:30px;
-      text-align: center;
-      border : solid 1px white;
-      background-color: rgb(255, 255, 255);
+    #enter{
+      position:absolute;
+      left:10px;
+      top:10px;
+      z-index:99;
     }
     </style>
 
     <style> body {padding: 0; margin: 0;} canvas {vertical-align: top;} </style>
   </head>
   <body>
-    <div id="info">
-      <h1>Knitting</h1>
-      <p>Dancing lines is an animation written in P5.</p>
+    <a href="infoknitting.html"><img id="info" src="resources/info.png" width="100px"/></a>
+    <img id="enter" src="resources/enter.png" width="100px"/>
 
-    </div>
-    <div id="infobar" >press ENTER to go back to the gallery, press SPACEBAR for more information</div>
-  </body>
+      </body>
 </html>

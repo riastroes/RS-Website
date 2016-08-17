@@ -80,18 +80,7 @@ function keyPressed() {
         }
       }
     }
-    if(keyCode == 32){ //SPACEBAR
-      var info = document.getElementById("info");
-      if(app.is(info)){
-        if(info.style.visibility == "visible"){
-          info.style.visibility = "hidden";
-        }
-        else{
-          info.style.visibility = "visible";
-        }
-      }
-
-    }
+  
 
     return false;
 

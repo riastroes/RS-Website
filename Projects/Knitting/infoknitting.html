@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Info Knitting</title>
+    <script type= "text/javascript">
+    function goBack(){
+      window.location.assign("../Welcome/index.html?scene=5");
+    }
+    </script>
+    <style>
+    body{
+      font-family:"Arial";
+      font-size:18px;
+      background-color: #93aeb4;
+      color: white;
+      margin:0px;
+
+    }
+
+    p,ul{
+      margin:auto;
+      width:50%;
+      text-align:left;
+      align:center;
+    }
+    #content{
+
+      padding:40px;
+      text-align: center;
+    }
+
+    #enter{
+      position:absolute;
+      right:10px;
+      top:10px;
+      z-index:99;
+    }
+    </style>
+
+  </head>
+  <body  onkeypress="goBack()">
+    <img id="enter" src="resources/enter.png" />
+    <div id="content">
+
+    <h1>Knitting</h1>
+    <br/><br/><br/>
+    <p>Knitting is a fashinating technique of one thread following a path.
+    </p>
+    <h3>Technical Proces</h3>
+    <p>
+      The patterns are coded and after that saved as jpg or svg and imported in
+      Inkscape, Inkscape is the opensource variant of Illustrator. The next step is
+      to export a .dxf file and import this in 123D Design, a 3D modulator program that
+      is abel to export .stl files. This file format can be import in CURA, the
+      software of the 3D printer, that generates .gcode for this 3D printer.
+    </p>
+    <h3>Experiments</h3>
+    <p>In this project I am experimenting with 3D printers, my goal is to
+      print some knittings very thin. For now the printer is too sloppy, when I
+      print too thin. The construction is not solid enough, there are holes in
+      the lines. This is because the software is constructing the form based
+      on the borders of the thread of the knitting. So it is surrounding every hole with
+      a loop and is not following the beautiful path of the thread.
+    </p>
+    <p>
+      The next step will be to generate the .gcode streight from within the code and
+      skip all the processteps in between.
+    </p>
+
+
+  </div>
+  </body>
+</html>
