@@ -76,6 +76,11 @@ Knitting.prototype.style = function(nr){
     this.fillcolor = false;
     this.thickness = 7;
     break;
+    case 10:
+    this.strokecolor = false;
+    this.fillcolor = app.pal.randomImgColor();
+    this.thickness = 7;
+    break;
 
   }
 

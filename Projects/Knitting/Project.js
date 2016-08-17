@@ -203,9 +203,9 @@ var pos = createVector(wmarge,y);
 
       this.knitting.drawLastRow(pos, stitches, stitchwidth, stitchheight);
 
-      stroke(this.knitting.strokecolor);
-      fill(this.knitting.strokecolor);
-      text("two knits, two puls by Ria Stroes",width-330, height-40 );
+      this.knitting.style(10);
+      textAlign(CENTER);
+      text("two knits, two puls by Ria Stroes",width/2, height-50 );
 
 
       break;
@@ -245,9 +245,9 @@ var pos = createVector(wmarge,y);
       }
       this.knitting.drawLastRow(pos, stitches, stitchwidth, stitchheight);
 
-      stroke(this.knitting.strokecolor);
-      fill(this.knitting.strokecolor);
-      text("stye by Ria Stroes",width-330, height-40 );
+      this.knitting.style(10);
+      textAlign(CENTER);
+      text("stye by Ria Stroes",width/2, height-50 );
 
 
       break;
