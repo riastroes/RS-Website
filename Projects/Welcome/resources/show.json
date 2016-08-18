@@ -73,5 +73,13 @@
     "status": "ready",
     "date": "11-8-2016",
     "thumbnail": "tnpaintingmachines.jpg"
+  },
+  "9": {
+    "id": 1,
+    "project": "Makerversity",
+    "page": "/makerversity.html",
+    "status": "ready",
+    "date": "11-8-2016",
+    "thumbnail": "tnmakerversity.jpg"
   }
 }

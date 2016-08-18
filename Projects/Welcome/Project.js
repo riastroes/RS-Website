@@ -115,28 +115,14 @@ Project.prototype.run = function(nr){
   if(this.info && this.hasinfo){
     this.showInfo();
   }
-  this.showInfoBar();
+  
 }
 Project.prototype.showInfo = function(){
 
     this.bubble.draw(mouseX,mouseY);
 
 }
-Project.prototype.showInfoBar = function(){
-  this.style(4);
-  rect(0,height - 30,width,30);
-  this.style(2);
-  textAlign(CENTER);
-  textSize(14);
-  switch(this.infobar){
-    case 0:
-    text("CLICK = show info about a project, ENTER = show next project", width/2,height -10);
-    break;
-    case 1:
-    text("CLICK on a image = show a project", width/2,height -10);
-    break;
-  }
-}
+
 Project.prototype.showTitle = function(){
   this.style(1);
   textSize(200);

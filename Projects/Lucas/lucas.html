@@ -8,14 +8,20 @@
 
     <script type= "text/javascript">
     function goBack(){
-      window.location.assign("../Welcome/index.html?scene=5");
+      if(event.keyCode == 13){
+        window.location.assign("../Welcome/index.html?scene=5");
+      }
     }
     </script>
     <style>
+    body, p, td, a, pre, h1{
+      color:white;
+    }
     body{
       font-family: "Arial";
-      font-size:14px;
-      background-color: rgb(171, 217, 230);
+      font-size:16px;
+      background-color: rgb(12, 46, 20);
+      color:white;
       margin:0px;
     }
     h1{text-align:center}
@@ -28,7 +34,10 @@
     #content{
 
       width:50%;
-      margin:auto;
+      margin-left:500px;
+      margin-right:150px;
+      z-index:1;
+
 
     }
     #enter{
@@ -42,8 +51,9 @@
   </head>
   <body  onkeypress="goBack()">
     <img id="enter" src="resources/enter.png" width="100px"/>
-    <img src="resources/lucas.png" align="right" style="position:absolute; right:0px; bottom:30px; z-index:99"/>
-
+    <img src="resources/lucas.png" align="right" style="position:absolute; right:0px; bottom:30px; z-index:98"/>
+    <img src="resources/lucasunderTree.jpg" style="position:absolute; left:0px; top:0px;  z-index:0"/>
+    <img src="resources/lucas-sign.jpg" style="position:absolute; right:150px; bottom:0px; height:200px; z-index:80"/>
     <div id="content">
   <table><tr><td colspan="2">
     <h1> Lucas</h1>
@@ -57,6 +67,9 @@ He is thinking about all the cool places he will visit in the nearby future: Sne
 
 </p>
 <p>His facebook page:   http://www.facebook.com/LucasOnHisTrip
+  <br/>If you like this page, you can follow Lucas and find out
+  where he is going.
+</p>
 </td>
 </tr>
 <tr><td colspan="2">

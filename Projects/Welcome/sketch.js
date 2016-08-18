@@ -2,6 +2,7 @@
 "use strict";
 var app;
 
+
 function setup() {
 
     app = new App("Ria Stroes",windowWidth,windowHeight);

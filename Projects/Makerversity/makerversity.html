@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Makerversity</title>
+    <script type= "text/javascript">
+    function goBack(){
+      if(event.keyCode == 13){
+        window.location.assign("../Welcome/index.html?scene=5");
+      }
+    }
+    </script>
+    <style>
+    body{
+      font-family:"arial";
+      font-size:18px;
+      background-color: #93aeb4;
+      color: white;
+      margin:0px;
+      align:center;
+
+    }
+    td{
+      vertical-align: top;
+    }
+
+    #content{
+      margin: auto;
+      width: 50%;
+      padding:40px;
+
+    }
+    #enter{
+      position:absolute;
+      right:10px;
+      top:10px;
+      z-index:99;
+    }
+    </style>
+
+  </head>
+  <body  onkeypress="goBack()">
+  <img id="enter" src="resources/enter.png" width="100px"/>
+  <div id="content">
+
+    <h1>Makerversity</h1>
+    <p>
+      I work at Makerversity in Amsterdam.<BR/>
+      If you like to meet me, please come by
+      and have look at this amazing inpiring place.
+
+    </p>
+    <h3>About Makerversity</h3>
+    <p>
+
+      Makerversity is a pioneering community of emerging maker businesses.
+      At our Somerset House HQ in central London and now, central Amsterdam, we are kickstarting the third industrial revolution. We provide access to a range of studio, event and fabrication spaces and prototyping tools for our diverse member businesses.
+<br/>
+Our members also constitute our faculty, each contributing time and skills to inspire the next generation of creative and practical minds.  </p>
+    </p>
+
+</div>
+<img src="resources/makerversity1.jpg" align="left"/>
+<img src="resources/makerversity2.jpg" align="right"/>
+
+  </body>
+</html>

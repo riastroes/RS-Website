@@ -80,34 +80,47 @@ function keyPressed() {
         }
       }
     }
-  
+    if(keyCode == DOWN_ARROW){
+      if(app.is(app.project)){
 
-    return false;
-
-
-}
-function mousePressed() {
-  if(mouseButton == LEFT){
-    if(app.is(app.project)){
-      if(app.project.name == "Welcome"){
-        window.location.assign("index.html?scene=5");
+          if(app.project.name == "Welcome"){
+            if(app.is(app.project.gallery)){
+              app.project.gallery.speed++;
+            }
+          }
+          else{
+            window.location.assign("../Welcome/index.html?scene=5");
+          }
+        }
+        return false;
       }
-      else{
-        window.location.assign("../Welcome/index.html?scene=5");
-      }
+      if(keyCode == UP_ARROW){
+        if(app.is(app.project)){
+
+            if(app.project.name == "Welcome"){
+              if(app.is(app.project.gallery)){
+                app.project.gallery.speed--;
+              }
+            }
+            else{
+              window.location.assign("../Welcome/index.html?scene=5");
+            }
+          }
+          return false;
+        }
+        console.log(event.keyCode);
     }
-  }
-  if(mouseButton == RIGHT){
-    var info = document.getElementById("info");
-    if(app.is(info)){
-      if(info.style.visibility == "visible"){
-        info.style.visibility = "hidden";
-      }
-      else{
-        info.style.visibility = "visible";
-      }
-    }
-  }
 
-  return false;
-}
+// function mousePressed() {
+//   if(mouseButton == LEFT){
+//     if(app.is(app.project)){
+//       if(app.project.name == "Welcome"){
+//         window.location.assign("index.html?scene=5");
+//       }
+//       else{
+//         window.location.assign("../Welcome/index.html?scene=5");
+//       }
+//     }
+//   }
+//
+// }

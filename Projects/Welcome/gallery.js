@@ -9,6 +9,7 @@ function Gallery(){
   this.pos = [];
   this.frames = [];
   this.loaded = 0;
+  this.speed = 1;
 
 
 }
@@ -76,6 +77,15 @@ Gallery.prototype.createPresentation = function(){
 
 }
 Gallery.prototype.runPresentation = function(){
+  var slower_faster = document.getElementById("slower_faster");
+  slower_faster.style.visibility ="visible";
+  var imgclick = document.getElementById("imgclick");
+  imgclick.style.visibility ="visible";
+  var enter = document.getElementById("enter");
+  enter.style.visibility ="hidden";
+
+
+
   var choosenproject = -1;
   for(var i = 0; i < this.frames.length; i++){
     choosenproject =this.frames[i].move();

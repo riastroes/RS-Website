@@ -73,7 +73,7 @@ Frame.prototype.move = function(){
     this.stop = true;
   }
   if(!this.stop){
-    this.pos.y += 1;
+    this.pos.y += app.project.gallery.speed;
     if(this.pos.y > (height-30)){
 
       this.marge = (width % 200) / 2;

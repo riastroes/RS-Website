@@ -6,14 +6,16 @@
     <title>Info Knitting</title>
     <script type= "text/javascript">
     function goBack(){
-      window.location.assign("../Welcome/index.html?scene=5");
+      if(event.keyCode == 13){
+        window.location.assign("../Welcome/index.html?scene=5");
+      }
     }
     </script>
     <style>
     body{
       font-family:"Arial";
       font-size:18px;
-      background-color: #93aeb4;
+     background-color: #93aeb4;
       color: white;
       margin:0px;
 
@@ -29,6 +31,9 @@
 
       padding:40px;
       text-align: center;
+      background-image:"resources/pattern.jpg";
+      //background-repeat:repeat;
+
     }
 
     #enter{
@@ -41,7 +46,7 @@
 
   </head>
   <body  onkeypress="goBack()">
-    <img id="enter" src="resources/enter.png" />
+    <img id="enter" src="resources/enter.png" width="100px" />
     <div id="content">
 
     <h1>Knitting</h1>
@@ -54,9 +59,10 @@
       Inkscape, Inkscape is the opensource variant of Illustrator. The next step is
       to export a .dxf file and import this in 123D Design, a 3D modulator program that
       is abel to export .stl files. This file format can be import in CURA, the
-      software of the 3D printer, that generates .gcode for this 3D printer.
+      software of the 3D printer, that generates .gcode for this 3D printer, the Ultimaker+.
     </p>
     <h3>Experiments</h3>
+    <img src="resources/experimenten.jpg" align="center"/>
     <p>In this project I am experimenting with 3D printers, my goal is to
       print some knittings very thin. For now the printer is too sloppy, when I
       print too thin. The construction is not solid enough, there are holes in
@@ -68,7 +74,9 @@
       The next step will be to generate the .gcode streight from within the code and
       skip all the processteps in between.
     </p>
-
+    <p>
+      to be continued ....
+    </p>
 
   </div>
   </body>
