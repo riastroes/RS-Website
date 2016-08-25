@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
 
-    <title>Paintingmachines</title>
+    <title>Info Paintingmachines</title>
     <script type= "text/javascript">
     function goBack(){
       if(event.keyCode == 13){
@@ -11,7 +11,6 @@
       }
     }
     </script>
-    <style>
     <style>
     body{
       font-family:"Arial";
@@ -21,31 +20,22 @@
       margin:0px;
 
     }
+
+    p,ul{
+      margin:auto;
+      width:50%;
+      text-align:left;
+      align:center;
+    }
     #content{
 
       padding:40px;
       text-align: center;
     }
-    #infobar{
-      position:fixed;
-      bottom:0;
-      width:100%;
-      heigth:30px;
-      text-align: center;
-      border : solid 1px white;
-      background-color: white;
-      color:black;
 
-    }
-    #info{
+    #back{
       position:absolute;
       right:10px;
-      top:10px;
-      z-index:99;
-    }
-    #enter{
-      position:absolute;
-      left:10px;
       top:10px;
       z-index:99;
     }
@@ -53,12 +43,32 @@
 
   </head>
   <body  onkeypress="goBack()">
-    <img id="info" src="resources/info.png" width="100px" onclick="document.location.assign('infopaintingmachines.html');return false;"/>
-    <img id="enter" src="resources/enter.png" width="100px" />
-    <div id="content">
+    <img id="back" src="../welcome/resources/back.png" width="100px" onclick="location.assign('../welcome/index.html?scene=5');return false;"/>
+  <div id="content">
 
     <h1>Paintingmachines</h1>
-    <img src="resources/paintingmachines.jpg" alt="Paintingmachines" align="center" />
+    <img src="resources/paintingmachines.jpg" alt="Paintingmachines" align="center" width="50%"/>
+    <br/><br/><br/>
+    <p>Paintingmachines is an interactive app created in Processing. You can create digital paintings with 10 different machines.<br/>
+      Every machine has is own way of painting depending on his structure and the way he moves.<br/>
+      When a machine has done his job, a trail will start that will follow the painted forms.
+      You can stop this trailing by clicking the <strong>SPACEBAR</strong>.
+      With a click on the screen you can come back to the paintingmachine selection page.
+      Select your favourite machine and start painting.
+      When your painting is ready, you can save it by clicking the <strong>S button</strong>.<br/>
+      The painting will download and you can print it on some nice photo-paper for a nice result.
+      <br/><br/>
+      Have fun painting!!
+    </p>
+
+      <h3>DOWNLOAD THE APP</h3>
+      <p>
+      <ul>
+    <li>  <a href="apps/paintingmachines16win32.zip" download>Paintingmachines16 (WINDOWS 32bits)</a></il>
+    <li>  <a href="apps/paintingmachines16win64.zip" download>Paintingmachines16 (WINDOWS 64bits)</a></il>
+    <li>  <a href="apps/paintingmachines16mac.zip" download>Paintingmachines16 (MAC)</a></il>
+    </ul>
+    </p>
 
   </div>
   </body>

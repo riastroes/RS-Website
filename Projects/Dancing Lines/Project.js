@@ -120,7 +120,6 @@ Project.prototype.draw = function(nr){
     case 12:{
       for(var i = 0; i < this.groups3.length; i++){
         this.groups3[i].style(1);
-
         this.groups3[i].dans( 0.01);
         this.groups3[i].drawLineWeb();
       }
@@ -129,10 +128,7 @@ Project.prototype.draw = function(nr){
     case 13:{
 
       for(var i = 0; i < this.groups3.length; i++){
-
-
         this.groups3[i].shrink();
-
         this.groups3[i].style(5);
         this.groups3[i].dans(0.01);
         this.groups3[i].drawLineWeb();
@@ -140,7 +136,7 @@ Project.prototype.draw = function(nr){
       break;
     }
     case 14:{
-      
+
       for(var i = 0; i < this.groups3.length; i++){
 
         this.groups3[i].grow(createVector(width/2, height/2));
@@ -172,7 +168,7 @@ Project.prototype.draw = function(nr){
       }
       break;
     }
-    case 17:{
+  case 17:{
       this.groups3 = [];
 
     break;

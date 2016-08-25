@@ -79,13 +79,18 @@ function keyPressed() {
           window.location.assign("../Welcome/index.html?scene=5");
         }
       }
+      if(app.is(app.big) || app.is(app.flower)){
+        window.location.assign("../Welcome/index.html?scene=5");
+      }
     }
     if(keyCode == DOWN_ARROW){
       if(app.is(app.project)){
 
           if(app.project.name == "Welcome"){
             if(app.is(app.project.gallery)){
+              if(app.project.gallery.speed < 10){
               app.project.gallery.speed++;
+            }
             }
           }
           else{
@@ -99,7 +104,9 @@ function keyPressed() {
 
             if(app.project.name == "Welcome"){
               if(app.is(app.project.gallery)){
+                if(app.project.gallery.speed > -10){
                 app.project.gallery.speed--;
+              }
               }
             }
             else{

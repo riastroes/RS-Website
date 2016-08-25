@@ -163,7 +163,7 @@ function draw() {
                  }
        case 17:{
               //slowly changing color lines on black, without a leader
-              background(255);
+              background(0);
               app.runscene(0);
               break;
 
@@ -176,14 +176,9 @@ function draw() {
                 app.runscene(1000);
                 break;
                }
-         case 19:{
-                //slowly changing color lines on black, without a leader
-                background(255);
-                app.runscene(0);
-                break;
 
-               }
-       case 20:{
+
+       case 19:{
          //start over
               app.wait(1,0);
               break;

@@ -2,9 +2,9 @@ function Frame(img, nr){
   this.nr = nr;
   this.pg = createGraphics(img.width, img.height);
   this.pg.image(img,0,0);
-  this.marge = (width % 200) / 2;
-  this.offset = this.marge + (this.pg.width/2);
-  this.pos = createVector(this.offset + ((app.randomInt(parseInt((width-200)/200)) * 200)),(-this.nr*200)+(this.pg.height/3*2));
+  this.marge = ((width-250) % 200) / 2;
+  this.offset = this.marge + 100 + ((this.pg.width)/2);
+  this.pos = createVector(this.offset + ((app.randomInt(parseInt((width-450)/200)) * 200)),(-this.nr*200)+(this.pg.height/3*2));
   this.center = createVector(img.width/2, img.height/2);
   this.mask();
   this.stop = false;
@@ -74,13 +74,14 @@ Frame.prototype.move = function(){
   }
   if(!this.stop){
     this.pos.y += app.project.gallery.speed;
+
     if(this.pos.y > (height-30)){
 
-      this.marge = (width % 200) / 2;
-      this.offset = this.marge + (this.pg.width/2);
-      this.pos.x = this.offset + ((app.randomInt(parseInt((width-200)/200)) * 200));
+      this.marge = ((width -250) % 200) / 2;
+      this.offset = this.marge + 100 + ((this.pg.width)/2);
+      this.pos.x = this.offset + ((app.randomInt(parseInt((width-450)/200)) * 200));
       this.pos.y -= this.pg.height * app.project.gallery.frames.length;
-      console.log(app.randomInt(width/200));
+
     }
   }
   return  choosenproject;

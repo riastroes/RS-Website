@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Creative Coding</title>
+    <title>Dancing Lines</title>
 
     <script src="../../libraries/p5.min.js" type="text/javascript"></script>
     <script src="../../libraries/p5.dom.min.js" type="text/javascript"></script>
@@ -32,7 +32,7 @@
     <script src="Creature.js" type="text/javascript"></script>
 
     <style>
-    #enter{
+    #back{
       position:absolute;
       right:10px;
       top:10px;
@@ -43,7 +43,7 @@
     <style> body {padding: 0; margin: 0;} canvas {vertical-align: top;} </style>
   </head>
   <body>
-    <img id="enter" src="resources/enter.png" width="100px"/>
+    <img id="back" src="../welcome/resources/backbw.png" width="100px" onclick="location.assign('../welcome/index.html?scene=5');return false;"/>
 
       </body>
 </html>
