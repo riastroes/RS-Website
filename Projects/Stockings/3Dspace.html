@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>3D-space</title>
+    <script type= "text/javascript">
+    function goBack(){
+      if(event.keyCode == 13){
+        window.location.assign("../Welcome/index.html?scene=5");
+      }
+    }
+    </script>
+    <style>
+    <style>
+    body{
+      font-family:"arial";
+      font-size:18px;
+      background-color: #93aeb4;
+      color: white;
+      margin:0px;
+      align:center;
+
+    }
+    h1{
+      color:rgb(215, 152, 12);
+    }
+    td{
+      vertical-align: top;
+    }
+
+    #content{
+      margin: auto;
+      width: 50%;
+      padding:40px;
+
+    }
+    #back{
+      position:absolute;
+      right:10px;
+      top:10px;
+      z-index:99;
+    }
+    </style>
+
+  </head>
+  <body  onkeypress="goBack()">
+    <img id="back" src="../welcome/resources/back.png" width="100px" onclick="location.assign('../welcome/index.html?scene=5');return false;"/>
+   <div id="content">
+
+    <h1> 3D-space</h1>
+    <p>A 2D-design used in a 3D space.
+    <div><img src="resources/3D-space.gif" alt="3D space" height="600px"  />
+    </div>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Workshop</title>
+    <script type= "text/javascript">
+    function goBack(){
+      if(event.keyCode == 13){
+        window.location.assign("../Welcome/index.html?scene=5");
+      }
+    }
+    </script>
+    <style>
+    <style>
+    body{
+      font-family:"arial";
+      font-size:18px;
+      background-color: #93aeb4;
+      color: white;
+      margin:0px;
+      align:center;
+
+    }
+    h1{
+      color:rgb(255, 0, 0);
+    }
+    td{
+      vertical-align: top;
+    }
+    img{
+      margin-right:40px;
+      margin-bottom:40px;
+      float:left;
+    }
+    div{
+      display: inline-block;
+
+    }
+    iframe{
+      position:absolute;
+      height:800px;
+    }
+    #content{
+      margin: auto;
+
+      padding:40px;
+
+    }
+    #back{
+      position:absolute;
+      right:10px;
+      top:10px;
+      z-index:99;
+    }
+    </style>
+
+  </head>
+  <body  onkeypress="goBack()">
+    <img id="back" src="../welcome/resources/back.png" width="100px" onclick="location.assign('../welcome/index.html?scene=5');return false;"/>
+   <div id="content">
+
+    <h1>Workshops with Paintingmachines</h1>
+      <img src="resources/workshop.jpg" />
+      <div>
+        <img src="resources/stand.jpg" height="400px" />
+
+       <p>In the weekend from 19 -21 august 2016 I did more than 50 workshops in the glasshouse at the Makerfestival in Amsterdam. <br/>
+       <img src="resources/50workshops.jpg" height="200" /><br/>
+       The participants were from 4 years old to about 72 years.<br/>
+     Everyone made a digital painting and I explained how the digital painting was made with creative coding
+     (P5.Les.1: move your mouse in the field underneath the code.).<br/>
+     They learn how to paint circles at mouse point.
+
+     The little robotmachines of the paintingmachines 16 app did a great job. <br/>
+     Young and old were amused by the funny machines.</p>
+
+    </div>
+    <br/>
+    <iframe src="http://codepen.io/RiaStroes/pen/jAggvZ/" height="500px" width="100%"></iframe>
+  </div>
+  </body>
+</html>

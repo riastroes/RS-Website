@@ -96,6 +96,7 @@ Project.prototype.run = function(nr){
     this.hasinfo = false;
     this.infobar = 1;
     background(this.bg);
+    
     this.choosenproject = this.gallery.runPresentation();
     if(this.choosenproject >= 0){
       background(this.bg);
@@ -115,7 +116,7 @@ Project.prototype.run = function(nr){
   if(this.info && this.hasinfo){
     this.showInfo();
   }
-  
+
 }
 Project.prototype.showInfo = function(){
 

@@ -1,6 +1,7 @@
-function Frame(img, nr){
+function Frame(img, nr, size){
   this.nr = nr;
-  this.pg = createGraphics(img.width, img.height);
+  this.pg = createGraphics(size,size);
+  img.resize(size,size);
   this.pg.image(img,0,0);
   this.marge = ((width-250) % 200) / 2;
   this.offset = this.marge + 100 + ((this.pg.width)/2);
@@ -37,8 +38,8 @@ Frame.prototype.mask = function(){
     for(var y = 0; y < this.pg.height; y++){
       var pos = createVector(x,y);
       var center = createVector(this.pg.width/2, this.pg.height/2);
-      if(!app.posInCircle(pos, center, 90)){
-        if(!app.posInCircle(pos, center, 100)){
+      if(!app.posInCircle(pos, center, ((this.pg.width/2)-10))){
+        if(!app.posInCircle(pos, center, (this.pg.width/2))){
           var i = ( y * this.pg.width * 4 * pixelDensity()) + (x * 4 * pixelDensity());
           this.pg.pixels[i +3] = 0;
         }
