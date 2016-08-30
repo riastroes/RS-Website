@@ -129,11 +129,12 @@ Gallery.prototype.gotoProject = function(i){
   }
 }
 Gallery.prototype.showConnections = function(){
+  var a,b,d;
   this.style(0);
   for(var i = 0; i < this.connections.length; i +=2){
-    var a = this.connections[i];
-    var b = this.connections[i+1];
-    var d = abs(this.frames[a].pos.y - this.frames[b].pos.y);
+    a = this.connections[i];
+    b = this.connections[i+1];
+    d = abs(this.frames[a].pos.y - this.frames[b].pos.y);
     if(d < height/2){
       line(this.frames[a].pos.x,this.frames[a].pos.y,this.frames[b].pos.x,this.frames[b].pos.y);
     }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Photos Javascript Dress</title>
+    <script type= "text/javascript">
+    function goBack(){
+      if(event.keyCode == 13){
+        window.location.assign("../Welcome/index.html?scene=5");
+      }
+    }
+    </script>
+    <style>
+    <style>
+    body{
+      font-family:"arial";
+      font-size:18px;
+      background-color: #93aeb4;
+      color: white;
+      margin:0px;
+      align:center;
+
+    }
+    h1{
+      color:rgb(215, 152, 12);
+    }
+    td{
+      vertical-align: top;
+    }
+
+    #content{
+      margin: auto;
+      width: 50%;
+      padding:40px;
+
+    }
+    #back{
+      position:absolute;
+      right:10px;
+      top:10px;
+      z-index:99;
+    }
+    </style>
+
+  </head>
+  <body  onkeypress="goBack()">
+
+   <div id="content">
+
+    <h1> Photo's Javascript Dress</h1>
+    <table><tr><td>
+    <img src="resources/photos/jd1.jpg" alt="javascriptdress 1" /></td><td>
+    <img src="resources/photos/jd2.jpg" alt="javascriptdress 2" /></td><td>
+    <img src="resources/photos/jd3.jpg" alt="javascriptdress 3" /></td></tr>
+    <tr><td>
+    <img src="resources/photos/jd4.jpg" alt="javascriptdress 4" /></td><td>
+    <img src="resources/photos/jd5.jpg" alt="javascriptdress 5" /></td><td>
+    <img src="resources/photos/jd6.jpg" alt="javascriptdress 6" /></td></tr>
+
+  </table>
+
+
+
+      <img style="position:relative;left:0; margin-right:40px" src="resources/designs.jpg" alt="Tulip designs" height="400px" align="right"/>
+      <img style="position:relative; margin-left:40px; float:left" src="resources/firstdesigndress.jpg" alt="first design" height="400px" align="left"/>
+
+      <img style="position:relative;right:0; margin-left:40px" src="resources/code.jpg" alt="code" height="400px" align="left"/>
+
+
+
+
+  </div>
+  </body>
+</html>

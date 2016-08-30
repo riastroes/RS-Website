@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>3D printed Tulip</title>
+    <script type= "text/javascript">
+    function goBack(){
+      if(event.keyCode == 13){
+        window.location.assign("../Welcome/index.html?scene=5");
+      }
+    }
+    </script>
+    <style>
+    <style>
+    body{
+      font-family:"arial";
+      font-size:18px;
+      background-color: #93aeb4;
+      color: white;
+      margin:0px;
+      align:center;
+
+    }
+    h1{
+      color:rgb(215, 152, 12);
+    }
+    td{
+      vertical-align: top;
+    }
+
+    #content{
+      margin: auto;
+      width: 50%;
+      padding:40px;
+
+    }
+    #back{
+      position:absolute;
+      right:10px;
+      top:10px;
+      z-index:99;
+    }
+    </style>
+
+  </head>
+  <body  onkeypress="goBack()">
+    <img id="back" src="../welcome/resources/back.png" width="100px" onclick="location.assign('../welcome/index.html?scene=5');return false;"/>
+   <div id="content">
+
+    <h1> 3D printed Tulip</h1>
+    <div>
+    <p >
+      <ul>
+      <li>a coded design of a tulip in javascript.</li>
+      <li>saved in vector-format (.svg).</li>
+      <li>imported and created in 123Design.</li>
+      <li>finish in Z-Suite.</li>
+      <li>printed in a 3D printer.</li>
+<ul>
+</div>
+    <div height="400px">
+      <img style="position:absolute;left:0; margin-left:40px" src="resources/3DprintedTulip.jpg" alt="Tulip" height="400px" align="left"/>
+      <img style="position:absolute;right:0; margin-right:40px" src="resources/designTulip.jpg" alt="Tulip" height="400px" align="right"/>
+    </div>
+
+
+  </div>
+  </body>
+</html>

@@ -16,7 +16,8 @@
     "status": "ready",
     "date": "11-8-2016",
     "thumbnail": "tnhome.jpg",
-    "size":100
+    "size":100,
+    "connect":2
 
   },
   "2": {
@@ -145,5 +146,30 @@
     "status": "ready",
     "date": "18-8-2016",
     "thumbnail": "tnlogo.png"
+  },
+  "17":{
+    "project": "Javascript Dress",
+    "page": "/show.html",
+    "status": "ready",
+    "date": "20-5-2016",
+    "thumbnail": "tn3dprintedtulip.jpg",
+    "connect": 19,
+    "size": 75
+  },
+  "18":{
+    "project": "Javascript Dress",
+    "page": "/show.html",
+    "status": "ready",
+    "date": "18-8-2016",
+    "thumbnail": "tnjavascriptdress.jpg",
+    "connect": 19,
+    "size": 75
+  },
+  "19":{
+    "project": "Javascript Dress",
+    "page": "/show.html",
+    "status": "ready",
+    "date": "18-8-2016",
+    "thumbnail": "tndesignjavascriptdress.jpg"
   }
 }

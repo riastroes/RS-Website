@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Process Javascript Dress</title>
+    <script type= "text/javascript">
+    function goBack(){
+      if(event.keyCode == 13){
+        window.location.assign("../Welcome/index.html?scene=5");
+      }
+    }
+    </script>
+    <style>
+    <style>
+    body{
+      font-family:"arial";
+      font-size:18px;
+      background-color: #93aeb4;
+      color: white;
+      margin:0px;
+      align:center;
+
+    }
+    h1{
+      color:rgb(215, 152, 12);
+    }
+    td{
+      vertical-align: top;
+    }
+    img{
+      margin-bottom:40px;
+    }
+    #content{
+      margin: auto;
+
+      padding:40px;
+
+    }
+    #back{
+      position:absolute;
+      right:10px;
+      top:10px;
+      z-index:99;
+    }
+    </style>
+
+  </head>
+  <body  onkeypress="goBack()">
+
+   <div id="content">
+
+    <h1> Creating a Javascript Dress</h1>
+    <p>The javascript is made of a horizontal repeating surfacepattern designed in javascript,
+      exported as svg, saved as a .jpg and uploaded in de online shop of passion-designs.
+      After 4 weeks a got my design back as a fabric and sowed my own javascript dress.
+    <table>
+      <tr><td colspan="2"><img style="position:relative;left:0; margin-right:40px" src="resources/designs.jpg" alt="Tulip designs" height="400px" align="right"/>
+      </td></tr>
+      <tr><td ><img style="position:relative; margin-left:40px; float:left" src="resources/firstdesigndress.jpg" alt="first design" height="400px" align="left"/>
+</td><td ><img style="position:relative;right:0; margin-left:40px" src="resources/code.jpg" alt="code" height="400px" align="left"/>
+
+</td></tr>
+    </table>
+
+
+
+
+
+
+  </div>
+  </body>
+</html>

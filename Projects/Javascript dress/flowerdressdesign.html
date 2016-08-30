@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Javascript dress</title>
+    <script type= "text/javascript">
+    function goBack(){
+      if(event.keyCode == 13){
+        window.location.assign("../Welcome/index.html?scene=5");
+      }
+    }
+    </script>
+    <style>
+    <style>
+    body{
+      font-family:"arial";
+      font-size:18px;
+      background-color: #93aeb4;
+      color: white;
+      margin:0px;
+      align:center;
+
+    }
+    h1{
+      color:rgb(215, 152, 12);
+    }
+    td{
+      vertical-align: top;
+    }
+    img{
+      margin-right:40px;
+      margin-bottom:40px;
+      float:left;
+    }
+    div{
+      display: inline-block;
+
+    }
+    #content{
+      margin: auto;
+
+      padding:40px;
+
+    }
+    #back{
+      position:absolute;
+      right:10px;
+      top:10px;
+      z-index:99;
+    }
+    </style>
+
+  </head>
+  <body  onkeypress="goBack()">
+    <img id="back" src="../welcome/resources/back.png" width="100px" onclick="location.assign('../welcome/index.html?scene=5');return false;"/>
+   <div id="content">
+
+    <h1>Javascript dress</h1>
+    <img src="resources/flowerdress-min.jpg" alt="flowerdressdesign" />
+  </div>
+  </body>
+</html>
