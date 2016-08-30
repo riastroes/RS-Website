@@ -12,24 +12,35 @@
   "1": {
 
     "project": "Contact",
+    "page": "/home.html",
+    "status": "ready",
+    "date": "11-8-2016",
+    "thumbnail": "tnhome.jpg",
+    "size":100
+
+  },
+  "2": {
+
+    "project": "Contact",
     "page": "/contact.html",
     "status": "ready",
     "date": "11-8-2016",
     "thumbnail": "tnRia.jpg"
 
   },
-  "2": {
+
+  "3": {
 
     "project": "Stockings",
     "page": "/show.html",
     "status": "ready",
     "date": "11-8-2016",
     "thumbnail": "tn3Dspace.jpg",
-    "connect": "3",
+    "connect": "4",
     "size":100
 
   },
-  "3": {
+  "4": {
 
     "project": "Stockings",
     "page": "/show.html",
@@ -38,7 +49,7 @@
     "thumbnail": "tnstockings.jpg"
 
   },
-  "4": {
+  "5": {
 
     "project": "Dancing Lines",
     "page": "/dancing Lines.html",
@@ -48,23 +59,21 @@
 
   },
 
-  "5": {
+  "6": {
     "project": "Lucas",
     "page": "/lucas.html",
     "status": "ready",
     "date": "11-8-2016",
     "thumbnail": "tnlucas.jpg"
   },
-  "6": {
-    "id": 1,
+  "7": {
     "project": "Tulips",
     "page": "/3tulips.html",
     "status": "ready",
     "date": "11-8-2016",
     "thumbnail": "tntulip.jpg"
   },
-  "7": {
-    "id": 1,
+  "8": {
     "project": "Creative Coding",
     "page": "/creative coding.html",
     "status": "ready",
@@ -72,7 +81,7 @@
     "thumbnail": "tncreativecoding.jpg"
   },
 
-  "8": {
+  "9": {
     "project": "Making a Difference",
     "page": "http://www.riastroes.nl/2016/projects/Machines/index.html",
     "status": "ready",
@@ -81,23 +90,23 @@
 
   },
 
-  "9": {
+  "10": {
     "project": "Workshop",
     "page": "/workshop.html",
     "status": "ready",
     "date": "19-8-2016",
     "thumbnail": "tnworkshop.jpg",
-    "connect":10,
+    "connect":11,
     "size":150
   },
-  "10": {
+  "11": {
     "project": "Paintingmachines",
     "page": "/paintingmachines.html",
     "status": "ready",
     "date": "11-8-2016",
     "thumbnail": "tnpaintingmachines.jpg"
   },
-  "11": {
+  "12": {
     "id": 1,
     "project": "Makerversity",
     "page": "/makerversity.html",
@@ -105,7 +114,7 @@
     "date": "18-8-2016",
     "thumbnail": "tnmakerversity.jpg"
   },
-  "12": {
+  "13": {
     "id": 1,
     "project": "Blobbers",
     "page": "/blobbers.html",
@@ -113,7 +122,7 @@
     "date": "18-8-2016",
     "thumbnail": "tnblobbers.jpg"
   },
-  "13": {
+  "14": {
     "id": 1,
     "project": "Flowers",
     "page": "/flowers.html",
@@ -121,7 +130,7 @@
     "date": "18-8-2016",
     "thumbnail": "tnflowers.jpg"
   },
-  "14": {
+  "15": {
     "id": 1,
     "project": "BezierCircles",
     "page": "/BezierCircles.html",
@@ -129,7 +138,7 @@
     "date": "18-8-2016",
     "thumbnail": "tnBezierCircles.png"
   },
-  "15": {
+  "16": {
     "id": 1,
     "project": "Logo Design",
     "page": "/show.html",
