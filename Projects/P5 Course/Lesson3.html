@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Creative Coding</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.dom.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.sound.min.js" type="text/javascript"></script>
+
+    <script src="Lesson3.js" type="text/javascript"></script>
+    <style>
+      body {padding: 40; margin: 0; font-family:Arial}
+      pre{text-align:left;}
+      canvas{position:absolute;z-index:0;}
+      .info {display:none;}
+      .code {display:none;}
+
+      #divContent{position:absolute; z-index:10;margin:40px;}</style>
+  </head>
+  <body onload="getCode()">
+    <div id="divContent">
+      <br/><br/><br/><br/><br/>
+    <h1>Lesson 3: Creative Coding</h1>
+
+      <p>In this lesson you will learn some more basic drawing functions and let's try to move some shapes.</p>
+      <p>click on these topics..</p>
+      <div id="divFillCode">
+        <label>Fill in your code:</label><input id="inCode" type="text"></input><input type="button" onclick="setCode()" value="Set"></input>
+        <div id="divMsg" class="info" style="color:red;">Sorry, wrong code!</div><br/>
+        <p>If you don't know your code, you got after the first lesson, send me an email. I will send you a new one.</p>
+      </div>
+      <div id="divLesson" class="info">
+      <h2 onclick="show(divWhat);"><img src="resources/bol.png" alt="bol" width="20"/> What can you learn?</h2>
+        <div id="divWhat" class="info" onclick="show(this);" >
+
+        <h3 onclick="show(divBasics)"><img src="resources/bol.png" alt="bol" width="15"/> Basic drawing functions</h3>
+        <div id="divBasics" class="info">
+          <h4 onclick="show(divBackground)"><img src="resources/bol.png" alt="bol" width="10"/> Background</h4>
+          <div id="divBackground" class="info">
+            <pre>
+              //200 is light gray
+              background(200);
+            </pre>
+            <p>
+            You can set the background in the setup function.
+            Now it is executed once.<br/>
+            If you put it in de draw function, it will be executed every time the draw function is called by p5.
+            So all that was drawn will be overwritten.
+            </p>
+          </div>
+          <h4 onclick="show(divLine)"><img src="resources/bol.png" alt="bol" width="10"/> Point and lines</h4>
+          <div id="divLine" class="info">
+            <pre>
+              point(x, y);
+              line(x, y, x1, y1);
+            </pre>
+            <p>
+            You can set the size of the point with the strokeWeight function.<br/>
+            If you don't set the strokeWeight, it will be the size of 1.<br/>
+            We call this a default value.<br/>
+            The default value voor stroke is black and the default value for fill is white.</p>
+            <p>
+            The line function will draw a line from position (x, y,) to position (x1, y1);
+            You have to fill in numbers for the x and y, the x1 and the y1.</p>
+
+            <p>If you copy this example to your p5 editor, you will notice round line ends.<br/>
+               You can control this  with a function strokeCap. Go to the reference of p5 and find out how.
+             </p>
+
+          </div>
+        </div>
+
+        <h3 onclick="show(divVariables)"><img src="resources/bol.png" alt="bol" width="15"/> Variables</h3>
+          <div id="divVariables" class="info">
+            <p>
+            If you want to change a line just a little bit. You need a variable.
+            Think of a variable as a box where you can store a value.
+          </p>
+          <p>
+          You already know a two variables of p5
+            <ul><li>mouseX </li>
+            <li>mouseY </li></ul>
+            They store the x and y value of mousepointer.
+            <ul><li>width </li>
+            <li>height </li></ul>
+            store the value of the width and height of your canvas.
+            <ul><li>windowWidth </li>
+            <li>windowHeight </li></ul>
+            store the width and the height of the window of the user.<br/>
+            So now you can create a canvas as big as your window, even if you don't know the width of your screen.
+
+          </p>
+          <pre>
+            function setup(){
+              createCanvas(windowWidth, windowHeight);
+            }
+          </pre>
+          <p>If you create your own variables in a function. The variable will only be known within this function.
+            If you declare your variables outside the functions. You can use the variable in all your functions.
+
+            <pre>
+              var x;
+              function setup(){
+                 createCanvas(400,300);
+                 x = 0;
+              }
+              function draw(){
+                x = x+5
+                point(x,y);
+             }
+            </pre>
+            <p>
+            In this example the x is declared outside the draw function on top, because
+            in this example we will use te x in the draw function, but before you can add a value to a variable. This variable has to have a value.
+            This principle we call initialization. The setup function is the right place to do some initializations.
+            In the draw function every time this function loops we will add 5 to the value of x.
+            You also can write it like this </p>
+            <pre>
+              x += 5;
+              x -= 5;
+            </pre>
+          </div>
+
+      <h3 onclick="show(divAnimation)"><img src="resources/bol.png" alt="bol" width="15"/> Animation and frames</h3>
+        <div id="divAnimation" class="info">
+          <p>Every time the draw function is called, a frame is drawn to the canvas.
+          The maximum frameRate is 60 times a second. Sometimes this is to fast and you want to slow down your animation.
+        You can set the maximum frameRate a bit lower in the setup function</p>
+        <pre>
+          function setup(){
+             createCanvas(400,300);
+             frameRate(10);
+          }
+        </pre>
+          <p>If you want to animate a shape you will need variables.</p>
+          <p>Lets say you like a rectangle to move from left to right</p>
+          <p>You can find this example on the example page of this lesson.</p>
+          <pre>
+            var x;
+            function setup(){
+               createCanvas(400,300);
+               x = 0;
+            }
+            function draw(){
+              rect(x,100, 100,40);
+              x += 5;
+
+           }
+          </pre>
+          <p>
+          Here the rectangle has a speed of 5 pixels a frame.<br/>
+        </p>
+        </div>
+      </div>
+      <h2 onclick="show(divCreate)"><img src="resources/bol.png" alt="bol" width="20"/> What can you create?</h2>
+      <div id="divCreate" class="info">
+        <h3 onclick="show(divAssignments)"><img src="resources/bol.png" alt="bol" width="15"/> Assignments</h3>
+            <div id="divAssignments" class="info">
+              <ol>
+                <li>Background</li>
+                <ul>
+                    <li>You have to try to color you background black or gray in the setup function and in the draw function.</li>
+                    <li>Experiment with the background.</li>
+                    <li>Draw some random ellipses in the draw function and see the difference.</li>
+                </ul>
+                <li>Create a heading for a webpage.</li>
+                <ul>
+                  <li>your canvas should be as width as your window and 100 pixels height.</li>
+                  <li>use circles and let them roll from left to right and from right to left.</li>
+                  <li>let small circles roll fast and big circles roll slow.</li>
+              </ul>
+              <li>Create a heading for lesson 1,2 or 3.</li>
+                <ul>
+                  <li>You can only use the functions of that lesson, see Resume</li>
+                  <li>send it to me: riastroes@gmail.com</li>
+                  <li>I will publish it.</li>
+              </ul>
+              <li>Let the race begin!</li>
+              <ul>
+                <li>Build two little racecars.</li>
+                <li>Move the cars with a speed of random(5).</li>
+                <li>Keep in mind that you have to move all the parts of car at the same speed.</li>
+                <li>Draw a start and finish line on the left and right side.</li>
+                <li>Place your bet! which car will win?</li>
+            </ul>
+
+              </ol>
+            </div>
+      </div>
+      <h2 onclick="show(divExamples)"><img src="resources/bol.png" alt="bol" width="20"/> Examples</h2>
+       <div id="divExamples" class="info">
+         There is an example page where you can find examples, created with only functions you have learned so far.
+         Go to :<a href="examples3.html" target="new">Examples 3</a><br/>
+         Feel free to copy some of the functions to your own p5 editor and try to change them.
+         It is good practice to copy code and learn by trying.
+
+       </div>
+      <h2 onclick="show(divResume)"><img src="resources/bol.png" alt="bol" width="20"/> Resume</h2>
+         <div id="divResume" class="info">
+         <iframe src="index.html?lesson=3" width="100%" height="500px"  ></iframe>
+         </div>
+
+      <h2 onclick="show(divQuestions)"><img src="resources/bol.png" alt="bol" width="20"/> Questions</h2>
+        <div id="divQuestions" class="info">
+        <p>If you have questions or a remarks about this course, please send an email to:
+          <a href="mailto:riastroes@gmail.com">riastroes@gmail.com</a>
+        </p>
+        </div>
+      <h2 onclick="show(divNextLesson)"><img src="resources/bol.png" alt="bol" width="20"/> Go to next Lesson ...</h2>
+        <div id="divNextLesson" class="info">
+        <p>I like to follow you and see what you create in this course. So send me an image or printscreen of one the assignments in this lesson and I will send you a code to access to the next lesson. </p>
+        <p> <br/>
+        Click on this link to send your request for the next lesson to: <a href="mailto:riastroes@gmail.com?subject=p5.lesson.2">riastroes@gmail.com</a></p>
+          <p>If you send me a email. You will receive a code, as soon as it is available, for access to the next lesson.</p>
+        </div>
+      </div>
+  </body>
+</html>

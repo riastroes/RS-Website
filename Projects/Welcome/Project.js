@@ -67,6 +67,7 @@ Project.prototype.run = function(nr){
     background(this.bg);
     this.showTitle();
     this.showSubTitle();
+    
     break;
     case 1:
     //start bubbling
@@ -96,7 +97,7 @@ Project.prototype.run = function(nr){
     this.hasinfo = false;
     this.infobar = 1;
     background(this.bg);
-    
+
     this.choosenproject = this.gallery.runPresentation();
     if(this.choosenproject >= 0){
       background(this.bg);

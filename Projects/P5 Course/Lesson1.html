@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Creative Coding</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.dom.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.sound.min.js" type="text/javascript"></script>
+
+    <script src="Lesson1.js" type="text/javascript"></script>
+    <style>
+      body {padding: 40; margin: 0; font-family:Arial}
+
+      canvas{position:absolute;z-index:0;}
+      .info {display:none;}
+      .code {display:none;}
+      #divContent{position:absolute; z-index:10;margin:40px;}</style>
+  </head>
+  <body>
+    <div id="divContent">
+
+    <h1>Lesson 1: Creative Coding</h1>
+      <p>I like to take you on a creative learning experience on the web. You will learn some programming skills and I will encourage you to be creative with these skills.</p>
+      <p>click on these topics..</p>
+    <h2 onclick="show(divWhat);"><img src="resources/bol.png" alt="bol" width="20"/> What can you learn?</h2>
+    <div id="divWhat" class="info" onclick="show(this);" >
+      <p>Before we can start I have to tell you some things, so you understand the tools, we will use to be creative on the web.</p>
+      <h3 onclick="show(divProgramming)"><img src="resources/bol.png" alt="bol" width="15"/> What is programming?</h3>
+      <div id="divProgramming" class="info" onclick="show(this);">
+        <p>Programming is sending instructions to a computer. To do this we have to learn a language the computer understands.</p>
+        <p>Javascript is a collection of functions and values the computer can read and execute. All the commands are easy to read in English, but inside the computer they are translated to other languages, the computer can understand.</p>
+        <p>Javascript is a programming language that is used on the computer for displaying data in the browser on the web.</p>
+        <p>We will learn a little bit of javascript, so we can start sending instructions to the computer</p>
+
+        <h4 onclick="show(divFunctions)"><img src="resources/bol.png" alt="bol" width="10"/> What do you need to know about functions?</h4>
+        <div id="divFunctions" class="info" onclick="show(this);">
+        <p>Functions are a set of instructions. Together these instruction execute a specific task in your computer. Every instruction can be a value or an other function. In a function all the instructions are executed after each other every time in the same order.</p>
+        <p>A function has a name and in parentheses some params and between two braces a set of instructions.</p>
+        <strong>function <i>name</i> (<i>param1, param2, etc.</i>){
+            <br/>
+            ...<br/>
+            a set of instructions
+            <br/>
+            ...<br/>
+        }</strong>
+        <p>Not every function has params and later on we will see how we can use these params.</p>
+      </div>
+        <h4 onclick="show(divParams)"><img src="resources/bol.png" alt="bol" width="10"/> What are params?</h4>
+        <div id="divParams" class="info" onclick="show(this);">
+          <p>Params are values, you can give to a function to work with. </p>
+          <p>p5 starts with two functions setup and draw, both functions don't have any params. These functions need no values to work with, they just execute the instructions within the braces.</p>
+        </div>
+        <h4 onclick="show(divValues)"><img src="resources/bol.png" alt="bol" width="10"/> What are values?</h4>
+        <div id="divValues" class="info" onclick="show(this)">
+          A value can be a number, a char, word, string, an object or the result of a function. We will see examples of all these different values in this course.
+          The most important values in a computer are 0 and 1. The computer can calculate with these to numbers, but 0 and 1 also can represent the values false and true.
+          We don't need to know how the computer is calculating with these numbers. Other smart programmers created functions for us to make it easy to do far more interesting things with our computers.
+          Javascript is a collections of these functions and p5 is a combination of instructions in javascript that we can use to write instructions to the computer and tell the computer what and how to draw on a canvas on a webpage in the browser.
+        </div>
+
+      </div>
+
+      <h3 onclick="show(divP5);return false"><img src="resources/bol.png" alt="bol" width="15"/> Introduction  to p5</h3>
+        <div id="divP5" class="info" onclick="show(this);return false;" >
+          <p>
+        p5.js is een javascript library, developed special for artist graphic designers, education and beginners. It is a collection of functions that allow you to draw on a canvas element in a webpage in your browser.</p>
+      </div>
+    </div>
+  <h2 onclick="show(divCreate)"><img src="resources/bol.png" alt="bol" width="20"/> What can you create?</h2>
+  <div id="divCreate" class="info">
+      <h3 onclick="show(divDownload)"><img src="resources/bol.png" alt="bol" width="15"/> Download p5</h3>
+      <div id="divDownload" class="info" onclick="show(this)">
+        You can download this library and the p5 editor from the website: <br/>
+        <a href="p5js.org/download">p5js.org/download</a></br>
+        <p>
+        Download the library p5.js and download the P5 editor on this side and install the editor and library on your computer. The library will be loaded into the editor and off you go...</p>
+      </div>
+      <h3 onclick="show(divStart);"><img src="resources/bol.png" alt="bol" width="15"/> Getting started ...</h3>
+      <div id="divStart" class="info" onclick="show(this)">
+        <p>The p5 editor is starting with two functies, the function setup and the function draw.<p>
+        <h4 onclick="show(divSetup);"><img src="resources/bol.png" alt="bol" width="10"/> function setup</h4>
+        <div id="divSetup" class="info">In this function you can make all the preparations necessary for your sketch, soon we will see what kind of preparations you can make for a sketch. Remember that this function is executed only once. This means that al the functions between the accolades will be executed one time,after each other.
+        </div>
+        <h4 onclick="show(divDraw);"><img src="resources/bol.png" alt="bol" width="10"/> function draw</h4>
+        <div id="divDraw" class="info">In the function draw the actual drawing will take place. This function is executed 60 times a second. This means all the functions between the accolades of the draw function will be executed after each other 60 times in a second.
+        </div>
+        <h4 onclick="show(divExample);"><img src="resources/bol.png" alt="bol" width="15"/> Example</h4>
+        <div id="divExample" class="code">
+          <pre>
+          function setup(){
+            createCanvas(800,600);
+          }
+          </pre>
+          <p>In this function setup we create a canvas element in the webpage. This function needs two params to control the width and the height of the canvas. The canvas will be 800 pixels width and 600 pixels height. You can address every position on the canvas with an x, y value. </p>
+          <pre>
+            function draw(){
+              fill(random(255));
+              ellipse(mouseX, mouseY, 100,100);
+            }
+          </pre>
+
+          <p>In de function draw we will tell the computer to draw an ellipse.<br/> Before we can draw we need to get a color to work with.
+          We want to fill the ellipse with a random color, with a value between 0 and 255. 0 represents black and 255 represents white.
+          A random color between black and white is a color gray.</p>
+          <p>The function ellipse will draw a circle or ellipse on the canvas. This function needs four params; <br/>
+          the first two params are the position on the canvas (x,y).<br/>
+          Here we use the position of the mouse, to get a x and y value.<br/>
+          The position of the mouse are stored in mouseX and mouseY.<br/>
+          The third and the last params are the width and the height of the ellipse.</p>
+
+        </div>
+
+
+    </div>
+    <h3 onclick="show(divAssignment);"><img src="resources/bol.png" alt="bol" width="15"/> Assignments</h3>
+    <div id="divAssignment" class="info">
+    <p>Now you can start coding and be creative. Play and have fun!</p>
+    <ol>
+      <li>Explore and have fun with your mouse!<br/>
+      <ul>
+        <li>Change te size of your canvas</li>
+        <li>Use only black in the fill function</li>
+        <li>Change the size of the ellipse</li>
+        <li>Draw an ellipse at a specific position</li>
+      </ul></li>
+      <li>Create a composition with circles in black and white in the setup function. <br/>
+        <ul>
+          <li>Change te size of your canvas</li>
+          <li>For this assignment you don't need the draw function.</li>
+          <li>The center of an ellipse is at a position (x,y) on the canvas.</li>
+        </ul>
+
+      </li>
+      <li>Imagen that your canvas is photo of a night-scene. <br/>
+        <ul>
+          <li>You only can use circles and ellipses.</li>
+          <li>Make a sketch(10cmx10cm) on paper</li>
+          <li>Scale your papersketch(1cm :10 pixels) to your canvas</li>
+          <li>the ellipse function needs to know where his center position is, it needs x and y values.</li>
+          <li>For this assignment you don't need the draw function. Leave it empty.</li>
+        </ul>
+
+      </li>
+    </ol>
+    </div>
+  </div>
+  <h2 onclick="show(divResume)"><img src="resources/bol.png" alt="bol" width="20"/> Resume</h2>
+    <div id="divResume" class="info">
+    <iframe src="index.html?lesson=1" width="100%" height="500px"  ></iframe>
+    </div>
+
+  <h2 onclick="show(divQuestions)"><img src="resources/bol.png" alt="bol" width="20"/> Questions</h2>
+    <div id="divQuestions" class="info">
+    <p>If you have questions or a remarks about this course, please send an email to:
+      <a href="mailto:riastroes@gmail.com">riastroes@gmail.com</a>
+    </p>
+    </div>
+
+  <h2 onclick="show(divNextLesson)"><img src="resources/bol.png" alt="bol" width="20"/> Go to next Lesson ...</h2>
+  <div id="divNextLesson" class="info">
+  <p>I like to follow you and see what you create in this course. So send me an image of one the assignments in this lesson and I will send you a code to access to the next lesson. </p>
+  <p> <br/>
+  Click on this link to send your request for the next lesson to: <a href="mailto:riastroes@gmail.com?subject=p5.lesson.2">riastroes@gmail.com</a></p>
+    <p>If you send me a email. You will receive a code, as soon as it is available, for access to the next lesson.</p>
+  </div>
+  </body>
+</html>
