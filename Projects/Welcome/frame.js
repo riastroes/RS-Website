@@ -1,11 +1,12 @@
 function Frame(img, nr, size){
   this.nr = nr;
+  this.size = size;
   this.pg = createGraphics(size,size);
   img.resize(size,size);
   this.pg.image(img,0,0);
   this.marge = ((width-250) % 200) / 2;
   this.offset = this.marge + 100 + ((this.pg.width)/2);
-  this.pos = createVector(this.offset + ((app.randomInt(parseInt((width-450)/200)) * 200)),(-this.nr*200)+(this.pg.height/3*2));
+  this.pos = createVector(this.offset + ((app.randomInt(parseInt((width-450)/200)) * 200)),-random(100,200));
   this.center = createVector(img.width/2, img.height/2);
   this.mask();
   this.stop = false;
@@ -57,6 +58,52 @@ Frame.prototype.moveTo = function(pos){
 }
 Frame.prototype.move = function(){
   var x,y;
+  var choosenproject = -1;
+  this.stop = false;
+
+  if(mouseIsPressed){
+    x = mouseX;
+    y = mouseY;
+    ellipse(x,y,20,20);
+  }
+  if(touchIsDown){
+    x = touchX;
+    y = touchY;
+    ellipse(x,y,20,20);
+  }
+  if(dist(this.pos.x , this.pos.y , x,y)< 100){
+    choosenproject = this.nr;
+    this.stop = true;
+  }
+  if(!this.stop){
+    var canmove = true;
+    for(var i = 0 ; i < app.project.gallery.frames.length; i++){
+      var aframe = app.project.gallery.frames[i];
+
+
+        if(dist(this.pos.x, this.pos.y, aframe.pos.x, aframe.pos.y) < (aframe.size) &&
+          this.pos.y < aframe.pos.y){
+            canmove = false;
+        }
+
+    }
+    if(canmove){
+      this.pos.y += app.project.gallery.speed;
+    }
+  }
+
+    if(this.pos.y > (height+100)){
+
+      this.marge = ((width -250) % 200) / 2;
+      this.offset = this.marge + 100 + ((this.pg.width)/2);
+      this.pos.x = this.offset + ((app.randomInt(parseInt((width-450)/200)) * 200));
+      this.pos.y = -random(100,200);
+
+    }
+    return  choosenproject;
+  }
+Frame.prototype.move1 = function(){
+  var x,y;
   this.stop = false;
   var choosenproject = -1;
   if(mouseIsPressed){
@@ -87,9 +134,10 @@ Frame.prototype.move = function(){
   }
   return  choosenproject;
 }
+
 Frame.prototype.draw = function(){
   this.style(1);
-  this.pg.ellipse(this.center.x, this.center.y, this.pg.width-1,this.pg.height-1);
+  //this.pg.ellipse(this.center.x, this.center.y, this.pg.width-1,this.pg.height-1);
   imageMode(CENTER);
   image(this.pg, this.pos.x, this.pos.y);
 

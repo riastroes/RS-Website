@@ -108,7 +108,7 @@ Gallery.prototype.runPresentation = function(){
   }
   if(this.loaded == this.frames.length && this.loaded >0){
 
-   this.showConnections();
+   //this.showConnections();
    this.draw();
  }
 
