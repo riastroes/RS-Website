@@ -85,6 +85,18 @@ Project.prototype.run = function(nr){
 
       break;
     }
+    case 4:{
+      append (this.text,"conditions");
+      append (this.text,"expressions");
+      append (this.text,"==, >, <, >=, <=");
+      append (this.text,"&& and ||");
+      append (this.text,"mouseIsPressed");
+      append (this.text,"keyIsPressed");
+      
+      this.showText(50,550,3);
+
+      break;
+    }
   }
 
 }

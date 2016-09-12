@@ -118,22 +118,22 @@ var myp5example6 = new p5(example6);
 
 //e7 = example7
 var example7 = function( e7 ) {
-  var x, x1;
+  var x;
 
   e7.setup = function() {
     e7.createCanvas(400,300);
-    x = -200;
-    x1 = -200;
+    x = 0;
   };
 
   e7.draw = function() {
     e7.background(240);
     e7.stroke(230);
-    e7.fill(0);
-    x += e7.random(3);
-    e7.rect(x,100,100,40);
-    x1 += e7.random(3);
-    e7.rect(x1, 200, 100,40);
+    e7.rect(x,200,100,40);
+    x += 1;
+
+    e7.rect(x -100,100, 100,40);
+    e7.rect(x -300,100, 100,40);
+    e7.rect(x -700,100, 100,40);
   };
 };
 var myp5example7 = new p5(example7);

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Creative Coding</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.dom.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.sound.min.js" type="text/javascript"></script>
+    <script src="../../mylib/Google.js" type="text/javascript"></script>
+
+    <script src="Lesson4.js" type="text/javascript"></script>
+    <style>
+      body {padding: 40; margin: 0; font-family:Arial}
+      pre{text-align:left;}
+      canvas{position:absolute;z-index:0;}
+      .info {display:none;}
+      .code {display:none;}
+
+      #divContent{position:absolute; z-index:10;margin:40px;}</style>
+  </head>
+  <body onload="getCode()">
+    <div id="divContent">
+      <br/><br/><br/><br/><br/>
+    <h1>Lesson 4: Creative Coding</h1>
+
+      <p>In this lesson you will learn to work with color, create some funny shapes and set some conditions.</p>
+      <p>click on these topics..</p>
+      <div id="divFillCode">
+        <label>Fill in your code:</label><input id="inCode" type="text"></input><input type="button" onclick="setCode()" value="Set"></input>
+        <div id="divMsg" class="info" style="color:red;">Sorry, wrong code!</div><br/>
+        <p>If you don't know your code, you got after the lesson 3, send me an email. I will send you a new one.</p>
+      </div>
+      <div id="divLesson" class="info">
+      <h2 onclick="show(divWhat);"><img src="resources/bol.png" alt="bol" width="20"/> What can you learn?</h2>
+        <div id="divWhat" class="info" onclick="show(this);" >
+          <p>In the last lesson we created a little racing game. The cars drove from left to right. If you were fast you could bet which car should win.<br/>
+           I bet it was a close-finish!</p>
+           <p>In this lesson you can learn to improve this game with conditions and colors.</p>
+           <h3 onclick="show(divCondition);"><img src="resources/bol.png" alt="bol" width="15"/> Conditions and expressions</h3>
+           <div id="divCondition" class="info" onclick="show(this);" >
+             <p>In a language you use a condition when you use words as if and but, when, then, after, before, under, above, etc.
+               In code we can use <strong>if</strong><br/>
+               If is a powerfull function in javascript. You get control over the execution of your code.</p>
+
+               <pre>
+                 if(<i>expression</i>){
+                     //do this
+                 }
+                 else{
+                    //do this
+                 }
+               </pre>
+             <p>Now you get control over your car so you can improve this game.<br/>
+               &nbsp;&nbsp;-start when you click on your mouse.<br/>
+               &nbsp;&nbsp;-stop after you reached the finish line.<br/>
+               Between the parenthesis there is an expression, that is <strong>true</strong> or <strong>false</strong>.<br/>
+               This expression can be:<br/>
+                &nbsp;&nbsp;  - a variable that stores the value true or valse.<br/>
+                &nbsp;&nbsp;  - a logical expression like: <br/>
+                <pre>
+                a == b (a is equal to b)
+                a > b ( a is greater then b)
+                a < b ( a is smaller then b)
+                a >= b ( a is greater then or equal to b)
+                 a <= b ( a is smaller then or equal to b)
+                (a and b are variable, the sine between a and b are operators.
+                the result of an expression is always true or false.)
+              </pre>&nbsp;&nbsp;  - a combination with logical expressions
+              <pre>
+                a > b && c == d  (a is greater then b AND c is equal to d. this is true if both expressions are true.)
+                a > b || c == d  (a is greater then b OR  c is equal to d. this is true if one of the expressions is true.)
+
+              </pre>&nbsp;&nbsp;  - a function (a function can return with a value, but I will discus this later in the course.)
+              </p>
+              <p>
+              So this is a lot to comprehend. Let's have a look at some examples.
+              Also on the Example page you can find several examples.
+            </p>
+
+          </p>
+            <pre>
+              if(mouseIsPressed){
+                  // start your engines!
+              }
+            </pre>
+            or if you use a keyboard.
+            <pre>
+              if(keyIsPressed){
+                  // start your engines!
+              }
+            </pre>
+            <p>
+            As you can see the else{..} part of this function is not always neccessary.
+            Here is an example with if and else:<br/>
+            Imagen a tree is growing:</p>
+            <pre>
+            if(size == 100){            // == <i> is equal to </i>
+              //we chop the tree
+              size = 0;
+            }
+            else{
+              //the tree is growing
+              size += 1;
+            }
+          </pre>
+            <p> x = 2 means the variable x , a little box with the name x, has the value 2 inside him now. this is an assignment not an expression.<br/>
+             x == 2 means, if the variable x has the value 2, then this is <strong>true</strong> if not this expression is <strong>false</strong>.
+             You never can use an assignment after if. This is a mistake every programmer will make, because the difference is so small.</p>
+
+          </div>
+
+        </div>
+      <h2 onclick="show(divCreate)"><img src="resources/bol.png" alt="bol" width="20"/> What can you create?</h2>
+      <div id="divCreate" class="info">
+
+
+        <h3 onclick="show(divAssignments)"><img src="resources/bol.png" alt="bol" width="15"/> Assignments</h3>
+            <div id="divAssignments" class="info">
+              <ol>
+                <li>Racing game</li>
+                <ul>
+                    <li>In the last lesson we created a little racing game, the cars drove from left to right and you could bet which car should win.</li>
+                    <li>I bet it was a close-finish!</li>
+                    <li>Now give each car a different color.</li>
+                    <li>Draw a finishline at 100 pixels left from your right border. (y = width - 100))
+                    <li>Start your cars if you click the mouse.</li>
+                    <li>Stop your cars after they reached the finish line</li>
+                    <li>Save your code. We will improve the code in the next lesson.</li>
+                </ul>
+                <li>Growing circles</li>
+                <ul>
+                  <li>Draw a circle in every frame.</li>
+                  <li>Let it grow in every frame.</li>
+                  <li>But when you click the mouse, shrink the size to 0</li>
+                </ul>
+
+              </ol>
+            </div>
+      </div>
+      <h2 onclick="show(divExamples)"><img src="resources/bol.png" alt="bol" width="20"/> Examples</h2>
+       <div id="divExamples" class="info">
+         There is an example page where you can find examples, created with only functions you have learned so far.
+         Go to :<a href="examples4.html" target="new">Examples 4</a><br/>
+         Feel free to copy some of the functions to your own p5 editor and try to change them.
+         It is good practice to copy code and learn by trying.
+
+       </div>
+      <h2 onclick="show(divResume)"><img src="resources/bol.png" alt="bol" width="20"/> Resume</h2>
+         <div id="divResume" class="info">
+         <iframe src="index.html?lesson=3" width="100%" height="500px"  ></iframe>
+         </div>
+
+      <h2 onclick="show(divQuestions)"><img src="resources/bol.png" alt="bol" width="20"/> Questions</h2>
+        <div id="divQuestions" class="info">
+        <p>If you have questions or a remarks about this course, please send an email to:
+          <a href="mailto:riastroes@gmail.com">riastroes@gmail.com</a>
+        </p>
+        </div>
+      <h2 onclick="show(divNextLesson)"><img src="resources/bol.png" alt="bol" width="20"/> Go to next Lesson ...</h2>
+        <div id="divNextLesson" class="info">
+        <p>I like to follow you and see what you create in this course. So send me an image or printscreen of one the assignments in this lesson and I will send you a code to access to the next lesson. </p>
+        <p> <br/>
+        Click on this link to send your request for the next lesson to: <a href="mailto:riastroes@gmail.com?subject=p5.lesson.4">riastroes@gmail.com</a></p>
+          <p>If you send me a email. You will receive a code, as soon as it is available, for access to the next lesson.</p>
+        </div>
+      </div>
+  </body>
+</html>
