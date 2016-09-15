@@ -4,9 +4,9 @@ function Frame(img, nr, size){
   this.pg = createGraphics(size,size);
   img.resize(size,size);
   this.pg.image(img,0,0);
-  this.marge = ((width-250) % 200) / 2;
+  this.marge = ((width-250) % this.size) / 2;
   this.offset = this.marge + 100 + ((this.pg.width)/2);
-  this.pos = createVector(this.offset + ((app.randomInt(parseInt((width-450)/200)) * 200)),-random(100,200));
+  this.pos = createVector(this.offset + ((app.randomInt(parseInt((width-450)/this.size)) * this.size)),-random(200,500));
   this.center = createVector(img.width/2, img.height/2);
   this.mask();
   this.stop = false;
@@ -28,8 +28,10 @@ Frame.prototype.style = function(nr){
     this.fillcolor = false;
     this.thickness = 2;
     app.style.pg(this.pg, this.strokecolor, this.fillcolor, this.thickness);
+
     break;
   }
+
   app.style.set(this.strokecolor, this.fillcolor, this.thickness);
 }
 
@@ -71,7 +73,7 @@ Frame.prototype.move = function(){
     y = touchY;
     ellipse(x,y,20,20);
   }
-  if(dist(this.pos.x , this.pos.y , x,y)< 100){
+  if(dist(this.pos.x + this.center.x , this.pos.y + this.center.y , x,y)< 100){
     choosenproject = this.nr;
     this.stop = true;
   }
@@ -94,10 +96,10 @@ Frame.prototype.move = function(){
 
     if(this.pos.y > (height+100)){
 
-      this.marge = ((width -250) % 200) / 2;
+      this.marge = ((width -250) % this.size) / 2;
       this.offset = this.marge + 100 + ((this.pg.width)/2);
-      this.pos.x = this.offset + ((app.randomInt(parseInt((width-450)/200)) * 200));
-      this.pos.y = -random(100,200);
+      this.pos.x = this.offset + ((app.randomInt(parseInt((width-450)/this.size)) * this.size));
+      this.pos.y = -random(100,this.size);
 
     }
     return  choosenproject;
@@ -116,18 +118,18 @@ Frame.prototype.move1 = function(){
     y = touchY;
     ellipse(x,y,20,20);
   }
-  if(dist(this.pos.x , this.pos.y , x,y)< 100){
+  if(dist(this.pos.x + this.center.x , this.pos.y + this.center.y, x,y)< 100){
     choosenproject = this.nr;
     this.stop = true;
   }
   if(!this.stop){
     this.pos.y += app.project.gallery.speed;
 
-    if(this.pos.y > (height-30)){
+    if(this.pos.y > (height-(this.size/2))){
 
-      this.marge = ((width -250) % 200) / 2;
+      this.marge = ((width -250) % this.size) / 2;
       this.offset = this.marge + 100 + ((this.pg.width)/2);
-      this.pos.x = this.offset + ((app.randomInt(parseInt((width-450)/200)) * 200));
+      this.pos.x = this.offset + ((app.randomInt(parseInt((width-450)/this.size)) * this.size));
       this.pos.y -= this.pg.height * app.project.gallery.frames.length;
 
     }
@@ -138,7 +140,8 @@ Frame.prototype.move1 = function(){
 Frame.prototype.draw = function(){
   this.style(1);
   //this.pg.ellipse(this.center.x, this.center.y, this.pg.width-1,this.pg.height-1);
-  imageMode(CENTER);
+  //imageMode(CENTER);
+  //rectMode(CENTER);
   image(this.pg, this.pos.x, this.pos.y);
 
 }
