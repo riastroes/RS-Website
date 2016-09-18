@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <title>My First VR experience</title>
+    <script src="../../mylib/Google.js" type="text/javascript"></script>
+
+    <script type= "text/javascript">
+    function goBack(){
+      if(event.keyCode == 13){
+        window.location.assign("../Welcome/index.html?scene=5");
+      }
+    }
+    </script>
+    <style>
+    <style>
+    body{
+      font-family:"arial";
+      font-size:18px;
+      background-color: #93aeb4;
+      color: white;
+      margin:0px;
+      align:center;
+
+    }
+    h1{
+      color:rgb(215, 152, 12);
+    }
+    td{
+      vertical-align: top;
+    }
+
+    #content{
+      position:absolute;
+      width: 50%;
+      margin: auto;
+      
+      padding:40px;
+
+    }
+    #back{
+      position:absolute;
+      left:10px;
+      top:10px;
+      z-index:99;
+    }
+    </style>
+
+  </head>
+  <body  onkeypress="goBack()">
+    <img id="back" src="../welcome/resources/back.png" width="100px" onclick="location.assign('../welcome/index.html?scene=5');return false;"/>
+   <div id="content">
+     <h1>
+     VR-Hacketon:  'De Pont'</h1>
+     <p>
+     An interactive film and game challenge.
+
+     This event was a collaboration between <a href="https://www.facebook.com/LavaDesignLab/">Lava Lab</a>, Creative Coding Amsterdam, <a href="https://www.facebook.com/Submarinechannel/">SubmarineChannel</a> &amp; Amsterdam Creative Industries Network.
+
+     The theme is Amsterdam Noord and the ferry that crosses the IJ. This hackathon is part of the project 'De Pont'
+
+     You can find more information at: <a href="http://depont.submarinechannel.com/" target="_blank">http://depont.submarinechannel.com/</a>
+
+     Creative Coding Amsterdam organized several workshops this day. I participated one of them about A-Frame, A VR library for the web. The workshop lasted 5 minutes. Corin showed us the library homepage of A-Frame, where I found an example of a sphere, a triangle and a cubical, which you could move in a VR empty space. I already create a small P5 animation about a Ferry, that transported little creatures to the other side and back.
+
+     Then I got an idea, what if ...  I can create a mix of these two worlds; a  2D-animation and this VR example, both libraries where written in javascript. So I took the example with the sphere, that I could move up en down and put it behind my P5 sketch of the ferry. Now the sphere became a sun and when the sun hits the boot all the hairs of the creatures are exploding, but the Ferry doesn't care and goes on... back and forth ... back and forth...
+
+     To my own big surprise it worked out well and on an Iphone or Ipad you can play this little game as you control the sun in VR-space and you can try to hit the boot with the sun.
+
+     You can play this little game on <a href="VR">riastroes.nl/VR</a>
+   </p>
+
+     <img class="alignnone size-full wp-image-317" src="resources/vr.png" alt="vr" width="300" height="169" />
+<p>
+     The second version. <a href="http://riastroes.nl/VR2/index.html">riastroes.nl/VR2</a>
+</p>
+     <img class="alignnone size-full wp-image-435" src="resources/ferryvr1.jpg" alt="ferryVR" width="671" height="385" />
+
+     &nbsp;
+<p>
+     The third version:  <a href="https://riastroes.tinytake.com/sf/NzYzNzM5XzM0NzA5ODE">Ferry VR mp4</a>
+</p>
+     <img class="alignnone size-full wp-image-466" src="resources/ferry-vr0.jpg" alt="Ferry VR0" width="1084" height="711" />
+
+  </div>
+  </body>
+</html>

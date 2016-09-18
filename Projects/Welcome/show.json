@@ -1,4 +1,32 @@
 {
+  "24": {
+
+    "project": "My first VR Experience",
+    "page": "/myfirstVR.html",
+    "status": "ready",
+    "date": "18-5-2016",
+    "thumbnail": "tnvr.jpg"
+
+  },
+  "23": {
+
+    "project": "Fractal fun",
+    "page": "/fractalfun.html",
+    "status": "ready",
+    "date": "18-8-2016",
+    "thumbnail": "tnfractalfun.jpg"
+
+  },
+  "22": {
+
+    "project": "Javascript dress",
+    "page": "/show.html",
+    "status": "ready",
+    "date": "18-8-2016",
+    "thumbnail": "tncuffs.png",
+    "size": 100
+  },
+
 
   "21": {
 
