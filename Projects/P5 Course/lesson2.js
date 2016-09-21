@@ -57,7 +57,7 @@ function setCode(){
     block.style.display ="none";
     localStorage.setItem("lesson2", "rectangles");
   }
-  else{
+  else if(elem.value != ""){
     msg.style.display = "block";
   }
 }

@@ -70,7 +70,7 @@ function setCode(){
     block.style.display ="none";
     localStorage.setItem("lesson4", "color");
   }
-  else{
+  else if(elem.value != ""){
     msg.style.display = "block";
   }
 }
