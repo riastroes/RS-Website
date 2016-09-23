@@ -65,10 +65,10 @@ function setCode(){
   elem = document.getElementById("inCode");
   msg = document.getElementById("divMsg");
   lesson = document.getElementById("divLesson");
-  if(elem.value == "color"){
+  if(elem.value == "if"){
     lesson.style.display ="block";
     block.style.display ="none";
-    localStorage.setItem("lesson4", "color");
+    localStorage.setItem("lesson4", "if");
   }
   else if(elem.value != ""){
     msg.style.display = "block";

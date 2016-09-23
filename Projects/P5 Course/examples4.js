@@ -83,3 +83,47 @@ var example3 = function( e3 ) {
   };
 };
 var myp5example3 = new p5(example3);
+
+//e4 = example4
+var example4 = function( e4 ) {
+  var x,y;
+  var move_x, move_y;
+
+  e4.setup = function() {
+    e4.createCanvas(400,320);
+
+    x = e4.random(e4.width);
+    y = e4.random(e4.height);
+    move_x = 1;
+    move_y = 1;
+  };
+
+  e4.draw = function() {
+    e4.background(150);
+    e4.stroke(255);
+    e4.strokeWeight(20);
+
+    //control x
+    if(x > e4.width){
+      move_x = -1;
+    }
+    if(x < 0){
+      move_x = 1;
+    }
+
+    //control y
+    if(y > e4.height){
+      move_y = -1;
+    }
+    if(y < 0){
+      move_y = 1;
+    }
+
+    x += move_x;
+    y += move_y;
+
+    e4.point(x,y);
+
+  };
+};
+var myp5example4 = new p5(example4);

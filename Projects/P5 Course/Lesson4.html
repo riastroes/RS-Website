@@ -25,7 +25,7 @@
       <br/><br/><br/><br/><br/>
     <h1>Lesson 4: Creative Coding</h1>
 
-      <p>In this lesson you will learn to work with color, create some funny shapes and set some conditions.</p>
+      <p>Get into Control! Create conditions.</p>
       <p>click on these topics..</p>
       <div id="divFillCode">
         <label>Fill in your code:</label><input id="inCode" type="text"></input><input type="button" onclick="setCode()" value="Set"></input>
@@ -36,8 +36,8 @@
       <h2 onclick="show(divWhat);"><img src="resources/bol.png" alt="bol" width="20"/> What can you learn?</h2>
         <div id="divWhat" class="info" onclick="show(this);" >
           <p>In the last lesson we created a little racing game. The cars drove from left to right. If you were fast you could bet which car should win.<br/>
-           I bet it was a close-finish!</p>
-           <p>In this lesson you can learn to improve this game with conditions and colors.</p>
+           I bet it was a close-finish!<br/>
+           In this lesson you can learn to improve this game with conditions.</p>
            <h3 onclick="show(divCondition);"><img src="resources/bol.png" alt="bol" width="15"/> Conditions and expressions</h3>
            <div id="divCondition" class="info" onclick="show(this);" >
              <p>In a language you use a condition when you use words as if and but, when, then, after, before, under, above, etc.
@@ -123,17 +123,39 @@
                 <ul>
                     <li>In the last lesson we created a little racing game, the cars drove from left to right and you could bet which car should win.</li>
                     <li>I bet it was a close-finish!</li>
-                    <li>Now give each car a different color.</li>
                     <li>Draw a finishline at 100 pixels left from your right border. (y = width - 100))
                     <li>Start your cars if you click the mouse.</li>
                     <li>Stop your cars after they reached the finish line</li>
                     <li>Save your code. We will improve the code in the next lesson.</li>
                 </ul>
+                <li>Racing game, the background</li>
+                <ul>
+                  <li>An other way of letting your car move is to move the background.</li>
+                  <li>Create a simple one line drawing of the background.(first on paper!!)</li>
+                  <li>Now the road can be much longer then the width of your screen.<br/>
+                  The line can start at x = -500 and every next linepart is related to this x.<br/>
+                    So when you add 1 to the value of x all the lineparts will move.</li>
+                    <pre>
+                      y = 200;
+                      x += 1;                         //move
+                      line(x ,y, x+100, y);
+                      line(x+100, y, x+100, y+ 20);
+                      line(x+100, y + 20, x + 150, y);
+                      etc.
+                    </pre>
+                  <li>Don't forget to declare the variable x and y outside the draw function.</li>
+                </uL>
                 <li>Growing circles</li>
                 <ul>
                   <li>Draw a circle in every frame.</li>
                   <li>Let it grow in every frame.</li>
                   <li>But when you click the mouse, shrink the size to 0</li>
+                </ul>
+                <li>Catch the ball</li>
+                <ul>
+                  <li>Can you write the code for this game?</li>
+                  <li>Click on the ball before he falls to the ground.</li>
+                  <li>The ball will get smaller and faster!</li>
                 </ul>
 
               </ol>

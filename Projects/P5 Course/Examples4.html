@@ -38,28 +38,14 @@
       #defaultCanvas3{
         position:absolute;
         left:400px;
-        top:1350px;
+        top:1700px;
       }
       #defaultCanvas4{
         position:absolute;
         left:400px;
-        top:1700px;
+        top:1900px;
       }
-      #defaultCanvas5{
-        position:absolute;
-        left:400px;
-        top:2100px;
-      }
-      #defaultCanvas6{
-        position:absolute;
-        left:400px;
-        top:2450px;
-      }
-      #defaultCanvas7{
-        position:absolute;
-        left:400px;
-        top:2900px;
-      }
+
     </style>
       </head>
   <body>
@@ -153,6 +139,45 @@
   <hr/>
   <h2>Example 4</h2>
   <pre>
+
+      var x,y;              //you can declare multiple variable on one line
+      var move_x, move_y;
+
+      function setup() {
+        createCanvas(400,320);
+
+        x = random(width);
+        y = random(height);
+        move_x = 1;
+      };
+
+      function draw() {
+        background(150);
+        stroke(255);
+        strokeWeight(20);
+
+        //control x
+        if(x > width){
+          move_x = -1;
+        }
+        if(x < 0){
+          move_x = 1;
+        }
+
+        //control y
+        if(y > height){
+          move_y = -1;
+        }
+        if(y < 0){
+          move_y = 1;
+        }
+
+        x += move_x;
+        y += move_y;
+
+        point(x,y);
+
+      };
 
   </pre>
   <hr/>
