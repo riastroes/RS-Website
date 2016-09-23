@@ -110,6 +110,32 @@
              You never can use an assignment after if. This is a mistake every programmer will make, because the difference is so small.</p>
 
           </div>
+          <h3 onclick="show(divframeCount);"><img src="resources/bol.png" alt="bol" width="15"/> Control your frames</h3>
+          <div id="divframeCount" class="info" onclick="show(this);" >
+            frameCount is a variable with a counter for the frames. A variable often used in a condition.
+            Whit control over the frames and the frameCounter you can execute your code not in every frame but in some of the frames.
+            <pre>
+              if(frameCount == 10 ){        //if frameCount is equal to then do this.
+                // do this
+              }
+              if(frameCount %  10  ==0){    //  if frameCount modulo 10 is equal to 0 then do this.
+                  //do  this                //  % 10 means what is left after deviding by 10;
+              }                             //  so every time frameCount can be devided by 10, then do this.
+
+              if = frameCount % 3            // f = 0 1 2 3 1 2 3 0 1 2 3 etc.
+              if(f == 0)
+                 //do this
+              }
+
+
+              if(random(100) < 10){         // In 10 precent of all the frames to this
+                  //do this
+              }
+              else{                         // in 90 precent of all the frames to that
+                  //do that
+              }
+            </pre>
+          </div>
 
         </div>
       <h2 onclick="show(divCreate)"><img src="resources/bol.png" alt="bol" width="20"/> What can you create?</h2>

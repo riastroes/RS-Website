@@ -43,7 +43,7 @@
       #defaultCanvas4{
         position:absolute;
         left:400px;
-        top:1900px;
+        top:2350px;
       }
 
     </style>
@@ -177,7 +177,37 @@
 
         point(x,y);
 
-      };
+      }
+
+  </pre>
+  <hr/>
+  <h2>Example 5</h2>
+  <pre>
+
+    var x,y;
+
+    function setup() {
+        createCanvas(400,320);
+        background(220);
+    }
+
+    function draw() {
+        stroke(0);
+
+        //control frames
+        if(frameCount % 5 == 0){
+          stroke(0);
+          strokeWeight(30);
+        }
+        else{
+          stroke(220);
+          strokeWeight(10);
+        }
+
+        x = random(width);
+        y = random(height);
+        point(x,y);
+      }
 
   </pre>
   <hr/>

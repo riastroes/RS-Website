@@ -127,3 +127,36 @@ var example4 = function( e4 ) {
   };
 };
 var myp5example4 = new p5(example4);
+
+//e5 = example5
+var example5 = function( e5 ) {
+  var x,y;
+  var rectwidth;
+
+  e5.setup = function() {
+    e5.createCanvas(400,320);
+    e5.background(220);
+
+
+
+  };
+
+  e5.draw = function() {
+
+    //control frames
+    if(e5.frameCount % 10 == 0){
+      e5.stroke(0);
+      e5.strokeWeight(30);
+    }
+    else{
+      e5.stroke(220);
+      e5.strokeWeight(10);
+    }
+
+    x = e5.random(e5.width);
+    y = e5.random(e5.height);
+    e5.point(x,y);
+
+  };
+};
+var myp5example5 = new p5(example5);
