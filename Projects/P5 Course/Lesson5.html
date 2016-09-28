@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Creative Coding</title>
+    <META NAME="COPYRIGHT" CONTENT="&copy; Ria Stroes">
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.dom.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.sound.min.js" type="text/javascript"></script>
+    <script src="../../mylib/Google.js" type="text/javascript"></script>
+
+    <script src="Lesson5.js" type="text/javascript"></script>
+    <style>
+      body {padding: 40; margin: 0; font-family:Arial}
+      pre{text-align:left;}
+      canvas{position:absolute;z-index:0;}
+      .info {display:none;}
+      .code {display:none;}
+
+      #divContent{position:absolute; z-index:10;margin:40px;}</style>
+  </head>
+  <body onload="getCode()">
+    <div id="divContent">
+      <br/><br/><br/><br/><br/><br/><br/>
+    <h1>Lesson 5: Creative Coding</h1>
+
+      <p>Now lets have some fun with color</p>
+      <p>click on these topics..</p>
+      <div id="divFillCode">
+        <label>Fill in your code:</label><input id="inCode" type="text"></input><input type="button" onclick="setCode()" value="Set"></input>
+        <div id="divMsg" class="info" style="color:red;">Sorry, wrong code!</div><br/>
+        <p>If you don't know your code, you got after the lesson 4, send me an email. I will send you a new one.</p>
+      </div>
+      <div id="divLesson" class="info">
+      <h2 onclick="show(divWhat);"><img src="resources/bol.png" alt="bol" width="20"/> What can you learn?</h2>
+        <div id="divWhat" class="info" onclick="show(this);" >
+          <p>There are a few different colorsystem in P5. We will learn about the RGB colormode.<br/>
+           RGB, stands for Red, Green and Blue. The three primary colors of an additive colorsystem<br/>
+           In an additive colorsystem you mix the colors with light and the three colors Red, Green and Blue will give you a white light.
+           <img src="resources/rgb.jpg" alt="rgb" /></p>
+
+           <h3 onclick="show(divColor);"><img src="resources/bol.png" alt="bol" width="15"/> color(r,g,b)</h3>
+           <div id="divColor" class="info" onclick="show(this);" >
+               <pre>
+                 var c = color(r,g,b);
+               </pre>
+               <p>
+               Here we say, the return value of the function color, with the params r,g,b returns a color value, we store this value in the variable c.
+               The params r, g, b have a value between 0 and 255. So the minimum amount of light (black) is <code>color(0,0,0) </code>
+               And white is represented by <code>color(255,255,255)</code>;
+               We don't allways have to use the color function. In de functions background and fill and stroke, you can use the r, g, b params without the color function.
+               <pre>
+                 fill( r, g, b);
+                 stroke (r, g, b);
+                 background (r, g, b);
+
+                 //but you also can write
+                 var c = color(r,g,b);
+                 fill(c);
+
+
+               </pre>
+             </p>
+
+          </div>
+          <h3 onclick="show(divTransparent);"><img src="resources/bol.png" alt="bol" width="15"/> Transparency</h3>
+          <div id="divTransparent" class="info" onclick="show(this);" >
+            <p>If you want to use transparent colors for your shapes, then you add an extra parameter to the color function with the
+            alpha value between 0 and 255</p>
+            <pre>
+              var c = color(r,g,b,a);
+              fill(r,g,b,a);
+            </pre>
+          </div>
+
+        </div>
+      <h2 onclick="show(divCreate)"><img src="resources/bol.png" alt="bol" width="20"/> What can you create?</h2>
+      <div id="divCreate" class="info">
+
+        <h3 onclick="show(divColormixing)"><img src="resources/bol.png" alt="bol" width="15"/> Color mixing</h3>
+            <div id="divColormixing" class="info">
+              <p>On the internet you can find a lot of resources for nice color combinations, but I advice you to
+              start color mixing your self. Buy some cheap paint and start mixing. Look for the combinations you like!
+              Don't use black. It kills all the colors, instead mix a dark color with blue and brown.
+              </p>
+              <p>Look at pictures in magazines and see if you can find color combination you like and use them in your
+                next P5 sketch.
+              </p>
+              <p>
+                resources:<br/>
+                <a href="http://www.w3schools.com/colors/colors_picker.asp" target="new">Color Picker</a><br/>
+                <a href="https://designschool.canva.com/blog/100-color-combinations/" target="new">100 color combinations</a><br/>
+              </p>
+            </div>
+
+        <h3 onclick="show(divAssignments)"><img src="resources/bol.png" alt="bol" width="15"/> Assignments</h3>
+            <div id="divAssignments" class="info">
+              <ol>
+                <li>Create a new  colorfull heading for this lesson</li>
+                  <ul>
+                    <li>headingwidth = windowWidth</li>
+                    <li>headingheight = 150</li>
+                    <li>send it to me: riastroes@gmail.com</li>
+                    <li>I will publish it.</li>
+                  </ul>
+                <li>Color mixing</li>
+                  <ul>
+                    <li>Use the little color tool in the Example page.</li>
+                    <li>Create a nice combination and use it in your next sketch</li>
+                  </ul>
+                <li>A bunch of flowers</li>
+                  <ul>
+                    <li>Remember the summer.</li>
+                    <li>Create the most amazing flowers, with triangles, circles, squares, etc.</li>
+                  </ul>
+                <li>The big parade of creative coding</li>
+                  <ul>
+                    <li>Create a colorfull "weagon for the big parade.</li>
+                    <li>The size of your weagon is 200 pixels width.</li>
+                    <li>Your creature can be 500 pixels height.</li>
+                    <li>Send me your creation and I will add it to the big parade.</li>
+                    <li>I hope this parade will become a big parade of creative coding in the comming years.</li>
+
+                  </ul>
+              </ol>
+            </div>
+      </div>
+      <h2 onclick="show(divExamples)"><img src="resources/bol.png" alt="bol" width="20"/> Examples</h2>
+       <div id="divExamples" class="info">
+         There is an example page where you can find examples, created with only functions you have learned so far.
+         Go to :<a href="examples5.html" target="new">Examples 5</a><br/>
+         Feel free to copy some of the functions to your own p5 editor and try to change them.
+         It is good practice to copy code and learn by trying.
+
+       </div>
+      <h2 onclick="show(divResume)"><img src="resources/bol.png" alt="bol" width="20"/> Resume</h2>
+      <div id="divResume" class="info">
+      <iframe src="index.html?lesson=5" width="100%" height="500px"  ></iframe>
+      </div>
+
+      <h2 onclick="show(divQuestions)"><img src="resources/bol.png" alt="bol" width="20"/> Questions</h2>
+        <div id="divQuestions" class="info">
+        <p>If you have questions or a remarks about this course, please send an email to:
+          <a href="mailto:riastroes@gmail.com">riastroes@gmail.com</a>
+        </p>
+        </div>
+      <h2 onclick="show(divNextLesson)"><img src="resources/bol.png" alt="bol" width="20"/> Go to next Lesson ...</h2>
+        <div id="divNextLesson" class="info">
+        <p>I like to follow you and see what you create in this course. So send me an image or printscreen of one the assignments in this lesson and I will send you a code to access to the next lesson. </p>
+        <p> <br/>
+          Click on this link to send your request for the next lesson to: <a href="mailto:riastroes@gmail.com?subject=p5.lesson.5">riastroes@gmail.com</a></p>
+            <p>If you send me a email. You will receive a code, as soon as it is available, for access to the next lesson.</p>
+            <p>Lesson 4 : <a href="Lesson5.html" target="new">lesson5.html</a><p/>
+            <hr>
+            <p>Lesson 1 : <a href="Lesson1.html" target="new">lesson1.html</a><br/>
+              Lesson 2 : <a href="Lesson2.html" target="new">lesson2.html</a><br/>
+              Lesson 3 : <a href="Lesson3.html" target="new">lesson3.html</a><br/>
+              Lesson 4 : <a href="Lesson4.html" target="new">lesson4.html</a><br/><p/>
+              Lesson 5 : <a href="Lesson5.html" target="new">lesson5.html</a><p/>
+
+          </div>
+        </div>
+    </body>
+  </html>

@@ -89,15 +89,24 @@ Project.prototype.run = function(nr){
       append (this.text,"conditions");
       append (this.text,"if else");
       append (this.text,"expressions");
+      append (this.text,"true or false");
       append (this.text,"==, >, <, >=, <=");
       append (this.text,"&& and ||");
       append (this.text,"mouseIsPressed");
       append (this.text,"keyIsPressed");
       append (this.text,"frameCount");
       append (this.text,"% (modulo)");
-
+      append (this.text,"noLoop and loop");
       this.showText(50,750,4);
 
+      break;
+    }
+    case 4:{
+      append (this.text,"color");
+      append (this.text,"RGB");
+      append (this.text,"hexadecimal colors");
+      append (this.text,"lerpColor");
+      append (this.text,"alpha");
       break;
     }
   }

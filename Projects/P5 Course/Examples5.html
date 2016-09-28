@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Course Creative Coding: Examples</title>
+    <META NAME="COPYRIGHT" CONTENT="&copy; Ria Stroes">
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.dom.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/addons/p5.sound.min.js" type="text/javascript"></script>
+    <script src="../../mylib/Google.js" type="text/javascript"></script>
+
+    <script src="examples5.js" type="text/javascript"></script>
+      <style>
+    body{font-family: Arial}
+      .code{
+        position:relative;
+        height:400px;
+        width:50%;
+        overflow-y:auto;
+
+      }
+      #defaultCanvas0{
+        position:absolute;
+        left:40px;
+        top:140px;
+      }
+      #defaultCanvas1{
+        position:absolute;
+        left:300px;
+        top:140px;
+      }
+      #defaultCanvas2{
+        position:absolute;
+        left:540px;
+        top:140px;
+      }
+      #defaultCanvas3{
+        position:absolute;
+        left:400px;
+        top:600px;
+      }
+      #defaultCanvas4{
+        position:absolute;
+        left:400px;
+        top:1100px;
+      }
+      #defaultCanvas5{
+        position:absolute;
+        left:400px;
+        top:1600px;
+      }
+      #defaultCanvas6{
+        position:absolute;
+        left:400px;
+        top:2450px;
+      }
+      #defaultCanvas7{
+        position:absolute;
+        left:400px;
+        top:2900px;
+      }
+    </style>
+      </head>
+  <body>
+    <h1>Examples Lesson 5</h1>
+    <p>Copy some code and try it yourself!</p>
+
+    <h2>A little color tool, create a nice color combination</h2>
+    <pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </pre>
+    <hr/>
+
+    <h2>Example 1</h2>
+    <pre>
+      var color1, color2;
+      var perc;
+
+      function setup(){
+        createCanvas(400, 100);
+        color1 = color(230,40,20);
+        color2 = color(20,40,230);
+        perc = 0;
+
+      }
+      function draw(){
+        var c = lerpColor(color1, color2, perc );
+        var x = (frameCount % width) * 4;  
+
+        stroke(c);
+        strokeWeight(4);
+        line(x,0,x,height);
+
+        perc += 0.04;
+        if(perc > 1){
+          perc = 0;
+        }
+
+      }
+
+    </pre>
+  <hr/>
+  <h2>Example 2</h2>
+  <pre>
+    var color1, color2, color3, color4, color5, color6;
+    var alpha;
+
+    function setup() {
+      createCanvas(400, 300);
+
+      alpha = 60;
+      color1 = color(20,255,180, alpha);
+      color2 = color(70,220,40, alpha);
+      color3 = color(120,170,255, alpha);
+      color4 = color(170,120,0, alpha);
+      color5 = color(220,70,210, alpha);
+      color6 = color(255,20,100, alpha);
+
+      noStroke();
+    }
+    function draw() {
+      fill(color1);
+      ellipse(50,50,100,100);
+      fill(color2);
+      ellipse(125,50,100,100);
+      fill(color3);
+      ellipse(200,50,100,100);
+
+      fill(color4);
+      ellipse(50,125,100,100);
+      fill(color5);
+      ellipse(125,125,100,100);
+      fill(color6);
+      ellipse(200,125,100,100);
+
+      noLoop();
+
+    }
+  </pre>
+  <hr/>
+  <h2>Example 3</h2>
+  <pre>
+  var color1;
+  var alpha;
+  var size;
+
+
+  function setup() {
+    createCanvas(400, 255);
+    alpha = 5;
+    color1 = color(220,70,210, alpha);
+    fill(color1);
+    noStroke();
+    size = height;
+    frameRate(5);       //slow down the animation
+
+  };
+
+  function draw() {
+
+
+    ellipse(width/2, height/2,size,size);
+    size -= 10;
+    if(size < 0){
+      size = height;
+    }
+    if(mouseIsPressed){
+      background(255);
+    }
+
+  };
+  </body>
+</html>

@@ -56,6 +56,7 @@
                &nbsp;&nbsp;-start when you click on your mouse.<br/>
                &nbsp;&nbsp;-stop after you reached the finish line.<br/>
                Between the parenthesis there is an expression, that is <strong>true</strong> or <strong>false</strong>.<br/>
+
                This expression can be:<br/>
                 &nbsp;&nbsp;  - a variable that stores the value true or valse.<br/>
                 &nbsp;&nbsp;  - a logical expression like: <br/>
@@ -118,7 +119,7 @@
               if(frameCount == 10 ){        //if frameCount is equal to then do this.
                 // do this
               }
-              if(frameCount %  10  ==0){    //  if frameCount modulo 10 is equal to 0 then do this.
+              if(frameCount %  10  == 0){    //  if frameCount modulo 10 is equal to 0 then do this.
                   //do  this                //  % 10 means what is left after deviding by 10;
               }                             //  so every time frameCount can be devided by 10, then do this.
 
@@ -136,7 +137,21 @@
               }
             </pre>
           </div>
+          <h3 onclick="show(divLoop);"><img src="resources/bol.png" alt="bol" width="15"/> noLoop and loop</h3>
+          <div id="divLoop" class="info" onclick="show(this);" >
+            The functions noLoop and loop can stop and start the execution of the drawing function.
+            <pre>
+              //the drawing function will stop if the mouse is pressed.
+              function draw(){
+                ...
 
+                if(mouseIsPressed){
+                  noLoop();
+                }
+
+              }
+            </pre>
+          </div>
         </div>
       <h2 onclick="show(divCreate)"><img src="resources/bol.png" alt="bol" width="20"/> What can you create?</h2>
       <div id="divCreate" class="info">
@@ -212,12 +227,12 @@
         <p> <br/>
           Click on this link to send your request for the next lesson to: <a href="mailto:riastroes@gmail.com?subject=p5.lesson.4">riastroes@gmail.com</a></p>
             <p>If you send me a email. You will receive a code, as soon as it is available, for access to the next lesson.</p>
-            <p>Lesson 4 : <a href="Lesson5.html" target="new">lesson5.html</a><p/>
+            <p>Lesson 5 : <a href="Lesson5.html" target="new">lesson5.html</a><p/>
             <hr>
             <p>Lesson 1 : <a href="Lesson1.html" target="new">lesson1.html</a><br/>
               Lesson 2 : <a href="Lesson2.html" target="new">lesson2.html</a><br/>
               Lesson 3 : <a href="Lesson3.html" target="new">lesson3.html</a><br/>
-              Lesson 3 : <a href="Lesson3.html" target="new">lesson4.html</a><br/><p/>
+              Lesson 4 : <a href="Lesson4.html" target="new">lesson4.html</a><br/><p/>
           </div>
         </div>
     </body>

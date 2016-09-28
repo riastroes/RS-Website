@@ -4,6 +4,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
+    <META NAME="COPYRIGHT" CONTENT="&copy; Ria Stroes">
+    <META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
     <link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico" />
     <script src="../../libraries/p5.min.js" type="text/javascript"></script>
     <script src="../../mylib/Google.js" type="text/javascript"></script>
@@ -65,11 +67,10 @@
     </style>
 
   </head>
-  <body>
+  <body onclick="location.assign('index.html?scene=5');return false;">
     <img id="imgclick" src="resources/click.png" />
     <img id="slower_faster" src="resources/slower-faster.png" />
     <img id="lucas" src="resources/lucas.png" align="right" style="position:absolute; right:0px; bottom:10px; z-index:99"/>
-    <img id="enter" src="resources/enter.png" width="100px" onclick="location.assign('index.html?scene=5');return false;"/>
-
+    <img id="enter" src="resources/enter.png" width="100px" onclick="location.assign('index.html?scene=5');return false;" />
   </body>
 </html>

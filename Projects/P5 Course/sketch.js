@@ -64,6 +64,16 @@ function draw() {
                 app.wait(200,99);
                 break;
               }
+            case 4:{
+               //resume lesson 4
+                app.project.run(1);
+                app.project.run(2);
+                app.project.run(3);
+                app.project.run(4);
+                app.project.run(5);
+                app.wait(200,99);
+                break;
+              }
             default:{
                 //wait
                 app.wait();

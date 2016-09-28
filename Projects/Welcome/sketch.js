@@ -10,18 +10,7 @@ function setup() {
     //second parameter, string with sounds comma-separated
     app.loadResources("signature.png,palette_landscape.png");
 }
-function mousePressed(){
 
-  if(mouseButton == LEFT){
-    if(app.is(app.project)){
-      if(app.project.hasinfo){
-        app.project.info = true;
-        app.project.bubble.textnr++;
-      }
-    }
-  }
-  return false;
-}
 function draw() {
     var i;
     if(app.isloaded) {
