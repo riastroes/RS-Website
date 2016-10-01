@@ -1,5 +1,6 @@
 var color1, color2, color3;
 var x,y;
+var stop;
 
 function setup(){
   var canvas = createCanvas(windowWidth, 10000);
@@ -19,19 +20,26 @@ function setup(){
   fill(color1);
   stroke(color3);
   rect(30,30,windowWidth-60,90);
-
+  stop = false
 }
 function draw(){
 
   x = random(50, width-50);
-  y = random(50, 120);
+  if(stop){
+    y = random(150, height);
+    fill(random(255),random(255),random(255),40);
+  }
+  else{
+    fill(color3);
+    y= random(50,120);
+  }
 
-  fill(color3);
+
   stroke(255);
   triangle( x,y , x + random(20), y - random(20) , x - random(20), y - random(20));
 
   if(mouseIsPressed){
-    noLoop();
+    stop = true;
   }
 
 

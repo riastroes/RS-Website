@@ -35,9 +35,9 @@
       <div id="divLesson" class="info">
       <h2 onclick="show(divWhat);"><img src="resources/bol.png" alt="bol" width="20"/> What can you learn?</h2>
         <div id="divWhat" class="info" onclick="show(this);" >
-          <p>There are a few different colorsystem in P5. We will learn about the RGB colormode.<br/>
+          <p>There are a few different colorsystem in P5. We will learn about the RGB colorsystem.<br/>
            RGB, stands for Red, Green and Blue. The three primary colors of an additive colorsystem<br/>
-           In an additive colorsystem you mix the colors with light and the three colors Red, Green and Blue will give you a white light.
+           In this additive colorsystem you mix the colors with light and the three colors Red, Green and Blue will give you a white light.
            <img src="resources/rgb.jpg" alt="rgb" /></p>
 
            <h3 onclick="show(divColor);"><img src="resources/bol.png" alt="bol" width="15"/> color(r,g,b)</h3>
@@ -48,7 +48,7 @@
                <p>
                Here we say, the return value of the function color, with the params r,g,b returns a color value, we store this value in the variable c.
                The params r, g, b have a value between 0 and 255. So the minimum amount of light (black) is <code>color(0,0,0) </code>
-               And white is represented by <code>color(255,255,255)</code>;
+               And white is represented by <code>color(255,255,255)</code><br/>
                We don't allways have to use the color function. In de functions background and fill and stroke, you can use the r, g, b params without the color function.
                <pre>
                  fill( r, g, b);
@@ -62,8 +62,12 @@
 
                </pre>
              </p>
+             <p>If the values of your params are low, you will have a dark color and if the values of your params are height you will get a light color.</p>
+
+
 
           </div>
+
           <h3 onclick="show(divTransparent);"><img src="resources/bol.png" alt="bol" width="15"/> Transparency</h3>
           <div id="divTransparent" class="info" onclick="show(this);" >
             <p>If you want to use transparent colors for your shapes, then you add an extra parameter to the color function with the
@@ -75,6 +79,25 @@
           </div>
 
         </div>
+        <h3 onclick="show(divHex);"><img src="resources/bol.png" alt="bol" width="15"/> Hexadecimal color codes</h3>
+        <div id="divHex" class="info" onclick="show(this);" >
+          <p>An other colorsystem, that is often used on the internet is an hexadecimal colorsystem.<br/>
+            The colors are represented by a hexadecimal colorcode.</p>
+            <pre>
+              fill("#AACC33");
+            </pre>
+            <p>
+            In a hexadecimal there are 16 numbers: 0 1 2 3 4 5 6 7 8 9 A B C D E F<br/>
+            The lowest hex is "#000000"  is black.<br/>
+            the highest hex is "#FFFFFF" is white.<br/>
+            The hexadecimal always starts with an # (hash);<br/>
+            The hex code is always placed between quotes. We call this a string notation.<br/>
+            In the early webdays there were a limited number of colors regarded as save colors, but nowadays that isn't a issue anymore.
+            The graphics card in all kind of devices are very good and can handle a lot of colors. <br/>
+            So you can use all the colors you like.<br/>
+          </p>
+        </div>
+
       <h2 onclick="show(divCreate)"><img src="resources/bol.png" alt="bol" width="20"/> What can you create?</h2>
       <div id="divCreate" class="info">
 
@@ -83,6 +106,8 @@
               <p>On the internet you can find a lot of resources for nice color combinations, but I advice you to
               start color mixing your self. Buy some cheap paint and start mixing. Look for the combinations you like!
               Don't use black. It kills all the colors, instead mix a dark color with blue and brown.
+              Although color mixing with paint is not an additive system, but a subtractive colorsystem. By mixing the colors you
+              will get a darker 'black' color, more likely 'brown'. Your feeling for color en colorcombinations will increase when you play with colors.
               </p>
               <p>Look at pictures in magazines and see if you can find color combination you like and use them in your
                 next P5 sketch.
@@ -116,7 +141,9 @@
                   </ul>
                 <li>The big parade of creative coding</li>
                   <ul>
-                    <li>Create a colorfull "weagon for the big parade.</li>
+                    <li>Create a colorfull "creature" for the big parade.</li>
+                    <li>You don't need to create the weagons, I did. <li>
+                    <li>Your creature can stand on it</li>
                     <li>The size of your weagon is 200 pixels width.</li>
                     <li>Your creature can be 500 pixels height.</li>
                     <li>Send me your creation and I will add it to the big parade.</li>
