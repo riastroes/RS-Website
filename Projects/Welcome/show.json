@@ -1,4 +1,13 @@
 {
+  "26": {
+
+    "project": "Diamonds",
+    "page": "/show.html",
+    "status": "ready",
+    "date": "2-10-2016",
+    "thumbnail": "tndiamonds.jpg"
+
+  },
   "25": {
 
     "project": "Feathers2",
@@ -64,17 +73,15 @@
     "date": "11-8-2016",
     "thumbnail": "tnhome.jpg",
     "size":100,
-    "connect":18
+    "connect":0
 
   },
-  "18": {
-
-    "project": "Contact",
-    "page": "/contact.html",
+  "18":{
+    "project": "Javascript Dress",
+    "page": "/show.html",
     "status": "ready",
-    "date": "11-8-2016",
-    "thumbnail": "tnRia.jpg"
-
+    "date": "18-8-2016",
+    "thumbnail": "tndesignjavascriptdress.jpg"
   },
 
   "17": {
@@ -223,11 +230,15 @@
     "connect": 20,
     "size": 75
   },
-  "0":{
-    "project": "Javascript Dress",
-    "page": "/show.html",
+
+  "0": {
+
+    "project": "Contact",
+    "page": "/contact.html",
     "status": "ready",
-    "date": "18-8-2016",
-    "thumbnail": "tndesignjavascriptdress.jpg"
+    "date": "11-8-2016",
+    "thumbnail": "tnRia.jpg"
+
   }
+
 }
