@@ -67,7 +67,7 @@ Project.prototype.run = function(nr){
     background(this.bg);
     this.showTitle();
     this.showSubTitle();
-    
+
     break;
     case 1:
     //start bubbling
