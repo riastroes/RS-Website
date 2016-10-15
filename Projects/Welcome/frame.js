@@ -6,7 +6,7 @@ function Frame(img, nr, size){
   this.pg.image(img,0,0);
   this.marge = ((width-250) % this.size) / 2;
   this.offset = this.marge + 100 + ((this.pg.width)/2);
-  this.pos = createVector(this.offset + ((app.randomInt(parseInt((width-450)/this.size)) * this.size)),random(-200,-100));
+  this.pos = createVector(this.offset + ((app.randomInt(parseInt((width-450)/this.size)) * this.size)),random(-200,-300));
   this.center = createVector(img.width/2, img.height/2);
   this.mask();
   this.stop = false;
@@ -99,7 +99,7 @@ Frame.prototype.move = function(){
       this.marge = ((width -250) % this.size) / 2;
       this.offset = this.marge + 100 + ((this.pg.width)/2);
       this.pos.x = this.offset + ((app.randomInt(parseInt((width-450)/this.size)) * this.size));
-      this.pos.y = -random(100,this.size);
+      this.pos.y = -random(100,200);
 
     }
     return  choosenproject;

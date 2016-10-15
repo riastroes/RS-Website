@@ -45,7 +45,9 @@ Gallery.prototype.createShow = function(){
       this.pages[i] = "/index.html";
     }
     else{
-      this.pages[i] = this.gallery[i].page;
+
+        this.pages[i] = this.gallery[i].page;
+
     }
     if(app.is(this.gallery[i].size)){
       this.size[i] = parseInt(this.gallery[i].size);
@@ -121,8 +123,8 @@ Gallery.prototype.draw = function(){
   }
 }
 Gallery.prototype.gotoProject = function(i){
-  if(this.gallery[i].page.startsWith("http://")){
-    window.location.assign(this.pages[i]);
+  if(this.gallery[i].page.startsWith("http")){
+    window.location = this.pages[i];
   }
   else{
     window.location.assign(this.projectpath + this.projects[i] + this.pages[i]);
